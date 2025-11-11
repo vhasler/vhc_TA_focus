@@ -17,13 +17,5 @@
   <collection label="Dashboard">
       <view name="unified_dashboard" default="true"/>
   </collection>
-  
-  <collection label="Splunk">
-      <view name="search" />
-      <view name="datasets" />
-      <view name="reports" />
-      <view name="alerts" />
-      <view name="dashboards" />
-  </collection>
 
 </nav>
