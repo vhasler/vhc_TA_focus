@@ -13,6 +13,11 @@ The unifying format for cloud billing data.
 
 ## Overview
 
+Sourcetypes: 
+focus:json      - Standard sourcetype for json formated file ingestions
+focus:csv       - Standard sourcetype for manuall csv file ingestions 
+azure:focus:csv - for Azure ingestion automatic split in --> azure:focus:csv:v10r2 (FOCUS version 1.1) || azure:focus:csv:v12 (FOCUS version 1.2)
+
 This app provides:
 
 - **Data Models**

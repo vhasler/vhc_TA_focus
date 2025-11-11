@@ -1,10 +1,10 @@
 <dashboard version="2" theme="dark">
     <label>Cost and usage</label>
-    <description>Based on FOCUS Specification</description>
+    <description>Based on FOCUS™ Specification</description>
     <definition><![CDATA[
 {
-	"title": "FOCUS cost and usage",
-	"description": "Based on FOCUS Specification",
+	"title": "Cost and usage",
+	"description": "Based on FOCUS™ Specification",
 	"inputs": {
 		"input_4HfwBlQu": {
 			"eventHandlers": [

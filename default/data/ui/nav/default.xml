@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <nav search_view="search" color="transparent">
 
-  <collection label="About FOCUS">
+  <collection label="About FOCUS™">
       <view name="focus_framework"/>
       <view name="focus_principles"/>
       <view name="focus_capabilities_domains"/>

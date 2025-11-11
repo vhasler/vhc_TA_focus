@@ -19,7 +19,7 @@
 ## Use [global] instead
 
 [global]
-disabled = false
+disabled = true
 debug = false
 verbosity = false
 spoolDir = $SPLUNK_HOME/var/spool/splunk
