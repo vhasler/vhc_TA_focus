@@ -1,0 +1,188 @@
+<dashboard version="2" theme="dark">
+    <label>Framework</label>
+    <description>FinOps is an operational framework and cultural practice which maximizes the business value of cloud, enables timely data-driven decision making, and creates financial accountability through collaboration between engineering, finance, and business teams.</description>
+    <definition><![CDATA[
+{
+	"visualizations": {
+		"viz_zxRxMGu1": {
+			"type": "splunk.image",
+			"options": {
+				"src": "/static/app/vhc_TA_focus/FinOpsFoundation/Framework-Overview-Hero-v2-1.svg"
+			}
+		},
+		"viz_Ovz17Egx": {
+			"type": "splunk.rectangle",
+			"options": {
+				"fillColor": "#ffffff",
+				"rx": 20,
+				"strokeWidth": 0
+			}
+		},
+		"viz_5sW7AUi5": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Adopting FOCUS™\nthe FinOps Open Cost and Usage Specification",
+				"fontFamily": "Helvetica",
+				"fontColor": "#000000"
+			}
+		},
+		"viz_A81kwGvD": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/FinOpsFOCUS/FOCUS.svg"
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.linkToDashboard",
+					"options": {
+						"app": "vhc_TA_focus",
+						"dashboard": "focus_capabilities_personas_cases"
+					}
+				}
+			]
+		},
+		"viz_DAz4ViQb": {
+			"type": "splunk.rectangle",
+			"options": {
+				"fillColor": "transparent",
+				"strokeWidth": 0,
+				"rx": 10
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.linkToDashboard",
+					"options": {
+						"app": "vhc_TA_focus",
+						"dashboard": "focus_capabilities_domains"
+					}
+				}
+			]
+		},
+		"viz_TYxrFC8O": {
+			"type": "splunk.rectangle",
+			"options": {
+				"fillColor": "transparent",
+				"strokeWidth": 0
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.linkToDashboard",
+					"options": {
+						"app": "vhc_TA_focus",
+						"dashboard": "finops_principles"
+					}
+				}
+			]
+		}
+	},
+	"dataSources": {},
+	"defaults": {
+		"dataSources": {
+			"ds.search": {
+				"options": {
+					"queryParameters": {
+						"latest": "$global_time.latest$",
+						"earliest": "$global_time.earliest$"
+					}
+				}
+			}
+		}
+	},
+	"inputs": {},
+	"layout": {
+		"options": {},
+		"globalInputs": [],
+		"tabs": {
+			"items": [
+				{
+					"layoutId": "layout_1",
+					"label": "New tab"
+				}
+			]
+		},
+		"layoutDefinitions": {
+			"layout_1": {
+				"type": "absolute",
+				"structure": [
+					{
+						"item": "viz_zxRxMGu1",
+						"type": "block",
+						"position": {
+							"x": 0,
+							"y": 0,
+							"w": 2150,
+							"h": 1000
+						}
+					},
+					{
+						"item": "viz_Ovz17Egx",
+						"type": "block",
+						"position": {
+							"x": 150,
+							"y": 910,
+							"w": 1230,
+							"h": 90
+						}
+					},
+					{
+						"item": "viz_5sW7AUi5",
+						"type": "block",
+						"position": {
+							"x": 170,
+							"y": 920,
+							"w": 540,
+							"h": 80
+						}
+					},
+					{
+						"item": "viz_A81kwGvD",
+						"type": "block",
+						"position": {
+							"x": 1120,
+							"y": 910,
+							"w": 250,
+							"h": 90
+						}
+					},
+					{
+						"item": "viz_DAz4ViQb",
+						"type": "block",
+						"position": {
+							"x": 710,
+							"y": 20,
+							"w": 270,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_TYxrFC8O",
+						"type": "block",
+						"position": {
+							"x": 160,
+							"y": 20,
+							"w": 290,
+							"h": 30
+						}
+					}
+				],
+				"options": {
+					"width": 2150,
+					"height": 1000,
+					"display": "fit-to-width"
+				}
+			}
+		}
+	},
+	"description": "FinOps is an operational framework and cultural practice which maximizes the business value of cloud, enables timely data-driven decision making, and creates financial accountability through collaboration between engineering, finance, and business teams.",
+	"title": "FinOps Framework"
+}
+    ]]></definition>
+    <meta type="hiddenElements"><![CDATA[
+{
+	"hideEdit": false,
+	"hideOpenInSearch": false,
+	"hideExport": false
+}
+    ]]></meta>
+</dashboard>

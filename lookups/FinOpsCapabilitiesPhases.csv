@@ -1,0 +1,76 @@
+Capabilities,Phases
+Data Ingestion,Inform
+Allocation,Inform
+Reporting & Analytics,Inform
+Anomaly Management,Inform
+Planning & Estimating,Inform
+Forecasting,Inform
+Budgeting,Inform
+Benchmarking,Inform
+Unit Economics,Inform
+Architecting for Cloud,Inform
+Workload Optimization,Inform
+Licensing & SaaS,Inform
+Rate Optimization,Inform
+Cloud Sustainability,Inform
+FinOps Practice Operations,Inform
+FinOps Education & Enablement,Inform
+Cloud Policy & Governance,Inform
+Invoicing & Chargeback,Inform
+FinOps Assessment,Inform
+Onboarding Workloads,Inform
+FinOps Tools & Services,Inform
+Intersecting Disciplines,Inform
+Data Ingestion,Optimize
+Allocation,Optimize
+Reporting & Analytics,Optimize
+Anomaly Management,Optimize
+Planning & Estimating,Optimize
+Forecasting,Optimize
+Budgeting,Optimize
+Benchmarking,Optimize
+Unit Economics,Optimize
+Architecting for Cloud,Optimize
+Workload Optimization,Optimize
+Licensing & SaaS,Optimize
+Rate Optimization,Optimize
+Cloud Sustainability,Optimize
+FinOps Practice Operations,Optimize
+FinOps Education & Enablement,Optimize
+Cloud Policy & Governance,Optimize
+Invoicing & Chargeback,Optimize
+FinOps Assessment,Optimize
+Onboarding Workloads,Optimize
+FinOps Tools & Services,Optimize
+Intersecting Disciplines,Optimize
+Data Ingestion,Operate
+Allocation,Operate
+Reporting & Analytics,Operate
+Anomaly Management,Operate
+Planning & Estimating,Operate
+Forecasting,Operate
+Budgeting,Operate
+Benchmarking,Operate
+Unit Economics,Operate
+Architecting for Cloud,Operate
+Workload Optimization,Operate
+Licensing & SaaS,Operate
+Rate Optimization,Operate
+Cloud Sustainability,Operate
+FinOps Practice Operations,Operate
+FinOps Education & Enablement,Operate
+Cloud Policy & Governance,Operate
+Invoicing & Chargeback,Operate
+FinOps Assessment,Operate
+Onboarding Workloads,Operate
+FinOps Tools & Services,Operate
+Intersecting Disciplines,Operate
+Inform,Crawl
+Optimize,Crawl
+Operate,Crawl
+Inform,Walk
+Optimize,Walk
+Operate,Walk
+Inform,Run
+Optimize,Run
+Operate,Run

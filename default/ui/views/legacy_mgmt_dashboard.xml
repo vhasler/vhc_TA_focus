@@ -1,0 +1,1147 @@
+<dashboard version="2" theme="dark">
+    <label>Management</label>
+    <description></description>
+    <definition><![CDATA[
+{
+	"title": "Management",
+	"description": "",
+	"inputs": {
+		"input_BZhVjSSQ": {
+			"dataSources": {
+				"primary": "ds_tINTlpEb"
+			},
+			"options": {
+				"defaultValue": "*",
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "ProviderName"
+			},
+			"title": "Provider Name",
+			"type": "input.dropdown"
+		},
+		"input_global_trp": {
+			"options": {
+				"defaultValue": "@mon,now",
+				"token": "global_time"
+			},
+			"title": "Global Time Range",
+			"type": "input.timerange"
+		},
+		"input_ijQaU5T6": {
+			"dataSources": {
+				"primary": "ds_aVdq1gNZ"
+			},
+			"options": {
+				"defaultValue": "*",
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "ServiceName"
+			},
+			"title": "Service Name",
+			"type": "input.dropdown"
+		},
+		"input_tUY5QdKR": {
+			"dataSources": {
+				"primary": "ds_XYfY06QA"
+			},
+			"options": {
+				"defaultValue": "*",
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "ServiceCategory"
+			},
+			"title": "Service Category",
+			"type": "input.dropdown"
+		},
+		"input_i0WDm3ln": {
+			"options": {
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"defaultValue": "*",
+				"token": "SubAccountName"
+			},
+			"title": "Sub Account Name",
+			"type": "input.dropdown",
+			"dataSources": {
+				"primary": "ds_EIC8P1eN"
+			}
+		},
+		"input_CORLDLii": {
+			"options": {
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"defaultValue": "*",
+				"token": "BillingAccountName"
+			},
+			"title": "Billing Account Name",
+			"type": "input.dropdown",
+			"dataSources": {
+				"primary": "ds_FMN47oZi"
+			}
+		},
+		"input_2rhIXFJT": {
+			"options": {
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"defaultValue": "*",
+				"token": "ChargeCategory"
+			},
+			"title": "Charge Category",
+			"type": "input.dropdown",
+			"dataSources": {
+				"primary": "ds_gxfv00hb"
+			}
+		}
+	},
+	"defaults": {
+		"dataSources": {
+			"ds.search": {
+				"options": {
+					"queryParameters": {
+						"earliest": "$global_time.earliest$",
+						"latest": "$global_time.latest$"
+					}
+				}
+			}
+		}
+	},
+	"visualizations": {
+		"viz_37Aqh2fl": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_z5Cbzqfi"
+			},
+			"description": "Monthly (except sub accounts without amounts)",
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"legendDisplay": "bottom",
+				"stackMode": "stacked",
+				"yAxisLabelVisibility": "show"
+			},
+			"title": "Effective Cost per Sub Account Name",
+			"type": "splunk.bar"
+		},
+		"viz_6C08tJ1K": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_sD6Z76t6"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisTitleVisibility": "hide"
+			},
+			"title": "Effective Cost per Provider",
+			"type": "splunk.column"
+		},
+		"viz_9jgoRxXe": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_aesSmc3G_ds_sD6Z76t6"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisTitleVisibility": "hide"
+			},
+			"title": "Billed Cost per Provider",
+			"type": "splunk.column"
+		},
+		"viz_A4u20btU": {
+			"dataSources": {
+				"primary": "ds_4k6L34bX"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"collapseThreshold": 0.0001,
+				"labelDisplay": "valuesAndPercentage",
+				"showDonutHole": true,
+				"collapseExcludeZero": true
+			},
+			"title": "Effective Costs by region",
+			"type": "splunk.pie"
+		},
+		"viz_JV5rUna9": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_t5Ecr724"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630"
+			},
+			"title": "Total Service Categories",
+			"type": "splunk.singlevalue"
+		},
+		"viz_JbnkFlNk": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_otOXgUWk"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"majorColor": "#ffffff",
+				"numberPrecision": 2,
+				"sparklineDisplay": "off",
+				"trendDisplay": "off",
+				"unit": ""
+			},
+			"title": "Effective Costs",
+			"type": "splunk.singlevalue"
+		},
+		"viz_KEgYL2UP": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_IbywZQ53"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630"
+			},
+			"title": "Total Sub Accounts",
+			"type": "splunk.singlevalue"
+		},
+		"viz_KQVkXjKI": {
+			"context": {
+				"majorColorEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#cba700"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#d97a0d"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_lptDpZR1"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"majorColor": "> majorValue | rangeValue(majorColorEditorConfig)",
+				"numberPrecision": 2,
+				"unit": "%"
+			},
+			"title": "Potential Savings",
+			"type": "splunk.singlevalue"
+		},
+		"viz_MFi6qyJC": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_SQngzHwE_ds_urEjEMiB"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked"
+			},
+			"title": "Daily Billed Cost per Service Category",
+			"type": "splunk.column"
+		},
+		"viz_O3NUuswn": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_urEjEMiB"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked"
+			},
+			"title": "Daily Effective Cost per Service Category",
+			"type": "splunk.column"
+		},
+		"viz_QtWiXlYB": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_CRhx1DMK"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisTitleVisibility": "hide"
+			},
+			"title": "Effective Cost per Service Name",
+			"type": "splunk.column"
+		},
+		"viz_TqLTh6Q5": {
+			"dataSources": {
+				"primary": "ds_2ZEIsGIq"
+			},
+			"options": {
+				"backgroundColor": "#192630"
+			},
+			"title": "Total Regions",
+			"type": "splunk.singlevalue"
+		},
+		"viz_Tqb2ysQK": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_6n9PEFwi_ds_uutPeUtF_ds_CRhx1DMK"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisTitleVisibility": "hide"
+			},
+			"title": "Billed Cost per Service Category",
+			"type": "splunk.column"
+		},
+		"viz_UPMqkAFQ": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_SUT81MKo"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630"
+			},
+			"title": "Total Providers",
+			"type": "splunk.singlevalue"
+		},
+		"viz_X729ih4a": {
+			"dataSources": {
+				"primary": "ds_DwalrReT_ds_4k6L34bX"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"collapseThreshold": 0.0001,
+				"labelDisplay": "valuesAndPercentage",
+				"showDonutHole": true,
+				"collapseExcludeZero": true
+			},
+			"title": "Billed Cost by region",
+			"type": "splunk.pie"
+		},
+		"viz_cL4oVat5": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_SmMqVwnw_ds_z5Cbzqfi"
+			},
+			"description": "Monthly (except sub accounts without amounts)",
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"legendDisplay": "bottom",
+				"stackMode": "stacked",
+				"yAxisLabelVisibility": "show"
+			},
+			"title": "Billed Cost per Sub Account Name",
+			"type": "splunk.bar"
+		},
+		"viz_feRlNuRD": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_qHhiF6FV"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630"
+			},
+			"title": "Total Services",
+			"type": "splunk.singlevalue"
+		},
+		"viz_ipxQ2wCY": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_ZjZPzD1Q_ds_otOXgUWk"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"majorColor": "#ffffff",
+				"numberPrecision": 2,
+				"sparklineDisplay": "off",
+				"trendDisplay": "off",
+				"unit": ""
+			},
+			"title": "Billed Costs",
+			"type": "splunk.singlevalue"
+		},
+		"viz_kPypFDMz": {
+			"options": {
+				"fillColor": "#ffffff",
+				"rx": 10,
+				"strokeWidth": 0
+			},
+			"type": "splunk.rectangle"
+		},
+		"viz_lNik0NgR": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_CmjVOqVP"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked"
+			},
+			"title": "Daily Effective Cost per Service",
+			"type": "splunk.column"
+		},
+		"viz_lidC5jjM": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_Ozq5KyUv_ds_CmjVOqVP"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked"
+			},
+			"title": "Daily Billed Cost per Service",
+			"type": "splunk.column"
+		},
+		"viz_pCEpE3GG": {
+			"eventHandlers": [
+				{
+					"options": {
+						"app": "vhc_TA_focus",
+						"dashboard": "finops_framework"
+					},
+					"type": "drilldown.linkToDashboard"
+				}
+			],
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/FinOpsFoundation/FinOps_Foundation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_pEDXAukI": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_WUBAzfwL_ds_CRhx1DMK"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisTitleVisibility": "hide"
+			},
+			"title": "Billed Cost per Service Name",
+			"type": "splunk.column"
+		},
+		"viz_vsceSILG": {
+			"options": {
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"fontSize": "large",
+				"markdown": "# Management"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_zj8GTNiL": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_uutPeUtF_ds_CRhx1DMK"
+			},
+			"description": "Monthly",
+			"options": {
+				"backgroundColor": "#192630",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisTitleVisibility": "hide"
+			},
+			"title": "Effective Cost per Service Category",
+			"type": "splunk.column"
+		}
+	},
+	"dataSources": {
+		"ds_2ZEIsGIq": {
+			"name": "SingleValue - Total Regions",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats dc(RegionName)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_4k6L34bX": {
+			"name": "Donat - Total Effective Cost by Region",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats sum(sumEffectiveCost) AS TotalEffectiveCost by RegionName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_6n9PEFwi_ds_uutPeUtF_ds_CRhx1DMK": {
+			"name": "Column - Billed Cost per Service Category",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1mon eval(round(sum(sumBilledCost),2)) as EC by ServiceCategory \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_CRhx1DMK": {
+			"name": "Column - Effective Cost per Service",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1mon eval(round(sum(sumEffectiveCost),2)) as EC by ServiceName \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_CmjVOqVP": {
+			"name": "Column - Daily Effictive Cost per Service",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1d eval(round(sum(sumEffectiveCost),2)) AS TotalEffectiveCost BY ServiceName \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_DwalrReT_ds_4k6L34bX": {
+			"name": "Donut - Total Billed Cost by Region",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats sum(sumBilledCost) AS TotalBilledCost by RegionName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_IbywZQ53": {
+			"name": "SingleValue - Total Sub Accounts",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats dc(SubAccountName)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_Ozq5KyUv_ds_CmjVOqVP": {
+			"name": "Column - Daily Billed Cost per Service",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1d eval(round(sum(sumBilledCost),2)) AS TotalBilledCost BY ServiceName \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_SQngzHwE_ds_urEjEMiB": {
+			"name": "Column - Daily Billed Cost per Service Category",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1d eval(round(sum(sumBilledCost),2)) AS TotalBilledCost BY ServiceCategory \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_SUT81MKo": {
+			"name": "SingleValue - Total Providers",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats dc(ProviderName)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_SmMqVwnw_ds_z5Cbzqfi": {
+			"name": "Bar - Billed Cost per Sub Account Name",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats sum(sumBilledCost) AS TotalBilledCost BY ServiceCategory SubAccountName \n| search TotalBilledCost > 2 \n| chart eval(round(sum(TotalBilledCost),2)) BY SubAccountName, ServiceCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_WUBAzfwL_ds_CRhx1DMK": {
+			"name": "Column - Billed Cost per Service",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1mon eval(round(sum(sumBilledCost),2)) as EC by ServiceName \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_XYfY06QA": {
+			"name": "Dropdown - Service Category",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| search ProviderName=\"$ProviderName$\" \n| dedup ServiceCategory \n| table ServiceCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_YXJuTARQ": {
+			"name": "BASE Search with Filter",
+			"options": {
+				"query": "| `focus_search`\nAND cost.ProviderName IN ($ProviderName|s$) \nAND cost.BillingAccountName IN ($BillingAccountName|s$) \nAND cost.ChargeCategory IN ($ChargeCategory|s$) \nAND cost.SubAccountName IN ($SubAccountName|s$) \nAND cost.ServiceCategory IN ($ServiceCategory|s$)\nAND cost.ServiceName IN ($ServiceName|s$) \n`focus_tstats_by`"
+			},
+			"type": "ds.search"
+		},
+		"ds_ZjZPzD1Q_ds_otOXgUWk": {
+			"name": "SingleValue - Billed Costs",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats sum(BilledCost) AS BC \n| eval BC = round(BC,2)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_aVdq1gNZ": {
+			"name": "Dropdown - Service Name",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| search ProviderName=\"$ProviderName$\" ServiceCategory=\"$ServiceCategory$\"\n| dedup ServiceName \n| table ServiceName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_aesSmc3G_ds_sD6Z76t6": {
+			"name": "Column -Billed Cost per Provider",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1mon eval(round(sum(sumBilledCost),2)) as EC by ProviderName \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_lptDpZR1": {
+			"name": "SingleValue - Potential Savings",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "\n| stats sum(sumBilledCost) AS TotalBilledCost, sum(EffectiveCost) AS TotalEffectiveCost \n| eval Savings = round(TotalBilledCost - TotalEffectiveCost, 4) \n| eval SavingsPercentage = round((Savings / TotalBilledCost) * 100, 2) \n| table ServiceCategory, TotalBilledCost, TotalEffectiveCost, Savings, SavingsPercentage \n| eval SavingsPercentage = if(isnull(SavingsPercentage) OR SavingsPercentage <= 0, 0,SavingsPercentage) \n| table SavingsPercentage"
+			},
+			"type": "ds.chain"
+		},
+		"ds_otOXgUWk": {
+			"name": "SingleValue - Effective Costs",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats sum(EffectiveCost) AS EC \n| eval EC = round(EC,2)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_qHhiF6FV": {
+			"name": "SingleValue - Total Services",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats dc(ServiceName)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_sD6Z76t6": {
+			"name": "Column - Effective Cost per Provider",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1mon eval(round(sum(sumEffectiveCost),2)) as EC by ProviderName \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_t5Ecr724": {
+			"name": "SingleValue - Total Service Categories",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats dc(ServiceCategory)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_tINTlpEb": {
+			"name": "Dropdown - Provider Name",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| dedup ProviderName \n| table ProviderName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_urEjEMiB": {
+			"name": "Column - Daily Effective Cost per Service Category",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1d eval(round(sum(sumEffectiveCost),2)) AS TotalEffectiveCost BY ServiceCategory \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_uutPeUtF_ds_CRhx1DMK": {
+			"name": "Column - Effective Cost per Service Category",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| timechart span=1mon eval(round(sum(sumEffectiveCost),2)) as EC by ServiceCategory \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_z5Cbzqfi": {
+			"name": "Bar - Effective Cost per Sub Account Name",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| stats sum(sumEffectiveCost) AS TotalEffectiveCost BY ServiceCategory SubAccountName \n| search TotalEffectiveCost != 0 \n| chart eval(round(sum(TotalEffectiveCost),2)) BY SubAccountName, ServiceCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_EIC8P1eN": {
+			"type": "ds.chain",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| dedup SubAccountName\n| table SubAccountName"
+			},
+			"name": "Dropdown - SubAccountName"
+		},
+		"ds_FMN47oZi": {
+			"type": "ds.chain",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| dedup BillingAccountName\n| table BillingAccountName"
+			},
+			"name": "Dropdown - Billing Account Name"
+		},
+		"ds_gxfv00hb": {
+			"type": "ds.chain",
+			"options": {
+				"extend": "ds_YXJuTARQ",
+				"query": "| dedup ChargeCategory\n| table ChargeCategory"
+			},
+			"name": "Dropdown - Charge Category"
+		}
+	},
+	"layout": {
+		"globalInputs": [
+			"input_global_trp",
+			"input_BZhVjSSQ",
+			"input_CORLDLii",
+			"input_2rhIXFJT",
+			"input_i0WDm3ln",
+			"input_tUY5QdKR",
+			"input_ijQaU5T6"
+		],
+		"layoutDefinitions": {
+			"layout_1": {
+				"options": {
+					"display": "fit-to-width",
+					"height": 5760,
+					"width": 2150
+				},
+				"structure": [
+					{
+						"item": "viz_UPMqkAFQ",
+						"position": {
+							"h": 350,
+							"w": 310,
+							"x": 110,
+							"y": 510
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_JV5rUna9",
+						"position": {
+							"h": 350,
+							"w": 310,
+							"x": 110,
+							"y": 1230
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_feRlNuRD",
+						"position": {
+							"h": 350,
+							"w": 310,
+							"x": 110,
+							"y": 2510
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_QtWiXlYB",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 430,
+							"y": 2510
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_6C08tJ1K",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 430,
+							"y": 510
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_37Aqh2fl",
+						"position": {
+							"h": 880,
+							"w": 790,
+							"x": 430,
+							"y": 3790
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_KEgYL2UP",
+						"position": {
+							"h": 350,
+							"w": 310,
+							"x": 110,
+							"y": 3790
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_zj8GTNiL",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 430,
+							"y": 1230
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_9jgoRxXe",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 1230,
+							"y": 510
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Tqb2ysQK",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 1230,
+							"y": 1230
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_pEDXAukI",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 1230,
+							"y": 2510
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_cL4oVat5",
+						"position": {
+							"h": 880,
+							"w": 790,
+							"x": 1230,
+							"y": 3790
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_JbnkFlNk",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 430,
+							"y": 150
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_ipxQ2wCY",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 1230,
+							"y": 150
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_KQVkXjKI",
+						"position": {
+							"h": 350,
+							"w": 310,
+							"x": 110,
+							"y": 150
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_kPypFDMz",
+						"position": {
+							"h": 120,
+							"w": 1910,
+							"x": 110,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_pCEpE3GG",
+						"position": {
+							"h": 70,
+							"w": 230,
+							"x": 1770,
+							"y": 50
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_vsceSILG",
+						"position": {
+							"h": 40,
+							"w": 640,
+							"x": 140,
+							"y": 80
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lNik0NgR",
+						"position": {
+							"h": 450,
+							"w": 1910,
+							"x": 110,
+							"y": 2870
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lidC5jjM",
+						"position": {
+							"h": 450,
+							"w": 1910,
+							"x": 110,
+							"y": 3330
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_O3NUuswn",
+						"position": {
+							"h": 450,
+							"w": 1910,
+							"x": 110,
+							"y": 1590
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_MFi6qyJC",
+						"position": {
+							"h": 450,
+							"w": 1910,
+							"x": 110,
+							"y": 2050
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_A4u20btU",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 430,
+							"y": 870
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_X729ih4a",
+						"position": {
+							"h": 350,
+							"w": 790,
+							"x": 1230,
+							"y": 870
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_TqLTh6Q5",
+						"position": {
+							"h": 350,
+							"w": 310,
+							"x": 110,
+							"y": 870
+						},
+						"type": "block"
+					}
+				],
+				"type": "absolute"
+			}
+		},
+		"options": {},
+		"tabs": {
+			"items": [
+				{
+					"label": "New tab",
+					"layoutId": "layout_1"
+				}
+			]
+		}
+	},
+	"applicationProperties": {
+		"hideEdit": false,
+		"hideExport": false,
+		"hideOpenInSearch": false
+	}
+}
+    ]]></definition>
+</dashboard>

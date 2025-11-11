@@ -1,0 +1,811 @@
+<dashboard version="2" theme="dark">
+    <label>Personas</label>
+    <description></description>
+    <definition><![CDATA[
+{
+	"title": "FOCUS Personas",
+	"description": "",
+	"inputs": {},
+	"defaults": {
+		"dataSources": {
+			"ds.search": {
+				"options": {
+					"queryParameters": {
+						"earliest": "$global_time.earliest$",
+						"latest": "$global_time.latest$"
+					}
+				}
+			}
+		}
+	},
+	"visualizations": {
+		"viz_3DsvVIaJ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_APB3tj4H": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Planning-Estimating.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_DyNq0HaL": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/adopting-finops-2024-3.png"
+			},
+			"type": "splunk.image"
+		},
+		"viz_EiudIYPT": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_GUOSEIkz": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/FinOpsFOCUS/FOCUS_faeaff.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_JSo6jk0e": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_KkyrkOgk": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_PlEc6jvE": {
+			"containerOptions": {
+				"visibility": {}
+			},
+			"dataSources": {
+				"primary": "ds_u1Vppw13"
+			},
+			"options": {
+				"backgroundColor": "transparent"
+			},
+			"type": "splunk.sankey"
+		},
+		"viz_TkJ071LN": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"fontSize": "large",
+				"markdown": "# Personas"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_WStYkMPe": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Wqo5Wbyw": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Zrb2BeIn": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_gJYQQtqI": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_iAYPqH42": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"fontSize": "large",
+				"markdown": "# Capabilities"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_nzxhbovn": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_oCmK7KTw": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_qOiYfa40": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_sGpSfZcj": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_wbQZIPba": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_7Rua9VQc": {
+			"eventHandlers": [
+				{
+					"type": "drilldown.linkToDashboard",
+					"options": {
+						"app": "vhc_TA_focus",
+						"dashboard": "finops_framework"
+					}
+				}
+			],
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/FinOpsFoundation/FinOps_Foundation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_lnl0W1HN": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Use Cases",
+				"fontSize": "extraSmall",
+				"fontFamily": "Helvetica",
+				"fontColor": "#faeafe"
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.linkToDashboard",
+					"options": {
+						"app": "vhc_TA_focus",
+						"dashboard": "focus_usecases"
+					}
+				}
+			]
+		},
+		"viz_TuRuG3Oh": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Allocation\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_YuSrPn0n": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Reporting & Analytics\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_a5aVBL73": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Forecasting\n\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_gKZV7ESH": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Workload Optimization\n\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_LoHs9L51": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Archictecting for Cloud\n\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_sR13pFVb": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Onboarding Workloads\n\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_eSAQZHPC": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Anomaly Management\n\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_RRIMTEr8": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Rate Optimization\n\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_vkvK5Axr": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Planning & Estimating\n\n\n",
+				"fontColor": "#0080af"
+			}
+		},
+		"viz_Q2pJhpKk": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Engineering",
+				"fontColor": "#004f3b"
+			}
+		},
+		"viz_ZLEMpbkB": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# FinOps Practitioner",
+				"fontColor": "#004f3b"
+			}
+		},
+		"viz_1iwmpADV": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Finance",
+				"fontColor": "#004f3b"
+			}
+		},
+		"viz_vVWolHTt": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Procurement",
+				"fontColor": "#004f3b"
+			}
+		},
+		"viz_c0LtIoq2": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Product",
+				"fontColor": "#004f3b"
+			}
+		}
+	},
+	"dataSources": {
+		"ds_3uDpdj17": {
+			"name": "FinOps - Domains - Capabilities",
+			"options": {
+				"query": "| inputlookup FinOpsDomainsCapabilities.csv \n| stats count by Domains, Capabilities \n| sort -Domains"
+			},
+			"type": "ds.search"
+		},
+		"ds_5fSzWOqi": {
+			"name": "Allocate multi-currency charges per application",
+			"options": {
+				"extend": "ds_xFobGfXE",
+				"query": "| search ProviderName=$ProviderName$ \n| spath input=Tags output=Application path=application \n| spath input=Tags output=Environment path=environment \n| spath input=Tags output=BusinessUnit path=business_unit \n| stats sum(BilledCost) AS TotalBilledCost \n    BY Application, ProviderName, BillingAccountId, BillingAccountName, BillingCurrency"
+			},
+			"type": "ds.chain"
+		},
+		"ds_HOisVZBX": {
+			"name": "Report refunds by subaccount within a billing period",
+			"options": {
+				"extend": "ds_xFobGfXE",
+				"query": "| search ProviderName=$ProviderName$ ServiceCategory=$ServiceCategory$\n| stats sum(BilledCost) AS TotalBilledCost \n    BY ProviderName, BillingAccountId, SubAccountId, SubAccountName, ServiceCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_J4evhrdt": {
+			"name": "Provider Name",
+			"options": {
+				"extend": "ds_LxaqwirY",
+				"query": "| dedup ProviderName \n| table ProviderName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_LxaqwirY": {
+			"name": "FOCUSBase - BillingPeriod",
+			"options": {
+				"query": "index=\"main\" sourcetype=\"csv\" \n| eval BillingPeriodStart = strptime(BillingPeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval ChargePeriodStart = strptime(ChargePeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval BillingPeriodEnd = strptime(BillingPeriodEnd, \"%Y-%m-%d %H:%M:%S\") \n| eval ChargePeriodEnd = strptime(ChargePeriodEnd, \"%Y-%m-%d %H:%M:%S\") \n| eval Global_Start = strptime(\"$global_time.earliest$\", \"%Y-%m-%dT%H:%M:%S.%QZ\") \n| eval Global_End = strptime(\"$global_time.latest$\", \"%Y-%m-%dT%H:%M:%S.%QZ\") \n| where BillingPeriodStart >= Global_Start AND BillingPeriodEnd <= Global_End\n| table *"
+			},
+			"type": "ds.search"
+		},
+		"ds_VY2da9PN": {
+			"name": "Service Category",
+			"options": {
+				"extend": "ds_xFobGfXE",
+				"query": "| search ProviderName=\"$ProviderName$\" \n| eval ServiceCategory = if(ServiceCategory==\"\", \"No ServiceCategory\", ServiceCategory) \n| dedup ServiceCategory \n| table ServiceCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_YAvFnFcJ": {
+			"name": "Analyze the different metered costs for a particular SKU",
+			"options": {
+				"extend": "ds_xFobGfXE",
+				"query": "| search ProviderName=$ProviderName$ \n| eval ChargePeriodStart = strftime(BillingPeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval ChargePeriodEnd = strftime(BillingPeriodEnd, \"%Y-%m-%d %H:%M:%S\") \n| stats sum(PricingQuantity) AS TotalPricingQuantity,\n    sum(ListCost) AS TotalListCost,\n    sum(EffectiveCost) AS TotalEffectiveCost \n    BY ProviderName, ChargePeriodStart, ChargePeriodEnd, SkuId, SkuPriceId, PricingUnit, ListUnitPrice \n| sort ChargePeriodStart \n| head 100"
+			},
+			"type": "ds.chain"
+		},
+		"ds_aUkjWsOF": {
+			"name": "Analyze tag coverage",
+			"options": {
+				"extend": "ds_LxaqwirY",
+				"query": "| search ProviderName=$ProviderName$ EffectiveCost > 0 \n| eval TaggedCost = if(like(Tags, \"%\\\"application\\\"%\"), EffectiveCost, 0) \n| eventstats sum(EffectiveCost) AS TotalEffectiveCost, sum(TaggedCost) AS TotalTaggedCost \n| eval TaggedPercentage = round((TotalTaggedCost / TotalEffectiveCost) * 100, 2) \n| dedup TaggedPercentage \n| table TaggedPercentage"
+			},
+			"type": "ds.chain"
+		},
+		"ds_gCHZnOfm": {
+			"name": "Allocate - Total mutal-currency charges",
+			"options": {
+				"extend": "ds_xFobGfXE",
+				"query": "| spath input=Tags output=Application path=application \n| spath input=Tags output=Environment path=environment \n| spath input=Tags output=BusinessUnit path=business_unit \n| search ProviderName=$ProviderName$ Application!=\"\"\n| stats sum(BilledCost) AS TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_lS0IkD6t": {
+			"name": "Allocation - Total Refunds",
+			"options": {
+				"extend": "ds_xFobGfXE",
+				"query": "| search ProviderName=$ProviderName$ ServiceCategory=$ServiceCategory$\n| stats sum(BilledCost) AS TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_n6LtddhB": {
+			"name": "Report costs by service category and subcategory",
+			"options": {
+				"extend": "ds_LxaqwirY",
+				"query": "| search ProviderName=$ProviderName$ ServiceCategory=$ServiceCategory$ \n| eval BillingPeriodStart = strftime(BillingPeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval BillingPeriodEnd = strftime(BillingPeriodEnd, \"%Y-%m-%d %H:%M:%S\") \n| stats sum(BilledCost) AS TotalBilledCost \n    BY ProviderName, BillingCurrency, BillingPeriodStart, ServiceCategory \n| sort -TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_u1Vppw13": {
+			"name": "Sankey - FinOps - Capabilities - Use Cases - Personas",
+			"options": {
+				"query": "| inputlookup FinOpsCapabilitiesUseCasePersonas.csv\n| stats count by \"Capabilities\", \"Personas\"",
+				"queryParameters": {
+					"earliest": "0",
+					"latest": ""
+				}
+			},
+			"type": "ds.search"
+		},
+		"ds_xFobGfXE": {
+			"name": "FOCUSBase - ChargePeriod",
+			"options": {
+				"query": "index=\"main\" sourcetype=\"csv\" \n| eval BillingPeriodStart = strptime(BillingPeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval ChargePeriodStart = strptime(ChargePeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval BillingPeriodEnd = strptime(BillingPeriodEnd, \"%Y-%m-%d %H:%M:%S\") \n| eval ChargePeriodEnd = strptime(ChargePeriodEnd, \"%Y-%m-%d %H:%M:%S\") \n| eval Global_Start = strptime(\"$global_time.earliest$\", \"%Y-%m-%dT%H:%M:%S.%QZ\") \n| eval Global_End = strptime(\"$global_time.latest$\", \"%Y-%m-%dT%H:%M:%S.%QZ\") \n| where ChargePeriodStart >= Global_Start AND ChargePeriodEnd <= Global_End \n| table *"
+			},
+			"type": "ds.search"
+		},
+		"ds_yrY5Lx8F": {
+			"name": "Identify which provider versions your datasets have been generated with",
+			"options": {
+				"extend": "ds_xFobGfXE",
+				"query": "| search ProviderName=$ProviderName$ \n| dedup ProviderName, PublisherName \n| table ProviderName, PublisherName"
+			},
+			"type": "ds.chain"
+		}
+	},
+	"layout": {
+		"globalInputs": [],
+		"layoutDefinitions": {
+			"layout_XKR3NPbw": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_PlEc6jvE",
+						"position": {
+							"h": 960,
+							"w": 1350,
+							"x": 400,
+							"y": 0
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_TkJ071LN",
+						"position": {
+							"h": 860,
+							"w": 370,
+							"x": 1730,
+							"y": 120
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_iAYPqH42",
+						"position": {
+							"h": 860,
+							"w": 370,
+							"x": 50,
+							"y": 120
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_JSo6jk0e",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 240
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_WStYkMPe",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_gJYQQtqI",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 430
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Wqo5Wbyw",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 520
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_wbQZIPba",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 610
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_3DsvVIaJ",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 690
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_qOiYfa40",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 770
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_sGpSfZcj",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 840
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_APB3tj4H",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 350,
+							"y": 910
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_nzxhbovn",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 1750,
+							"y": 420
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Zrb2BeIn",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 1750,
+							"y": 510
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_EiudIYPT",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 1750,
+							"y": 600
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_KkyrkOgk",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 1750,
+							"y": 690
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_oCmK7KTw",
+						"position": {
+							"h": 50,
+							"w": 50,
+							"x": 1750,
+							"y": 780
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_DyNq0HaL",
+						"position": {
+							"h": 290,
+							"w": 320,
+							"x": 1780,
+							"y": 120
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_GUOSEIkz",
+						"position": {
+							"h": 70,
+							"w": 230,
+							"x": 440,
+							"y": 30
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_7Rua9VQc",
+						"position": {
+							"x": 1490,
+							"y": 890,
+							"w": 230,
+							"h": 70
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lnl0W1HN",
+						"type": "block",
+						"position": {
+							"x": 570,
+							"y": 90,
+							"w": 140,
+							"h": 40
+						}
+					},
+					{
+						"item": "viz_TuRuG3Oh",
+						"type": "block",
+						"position": {
+							"x": 220,
+							"y": 250,
+							"w": 130,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_YuSrPn0n",
+						"type": "block",
+						"position": {
+							"x": 100,
+							"y": 350,
+							"w": 250,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_a5aVBL73",
+						"type": "block",
+						"position": {
+							"x": 200,
+							"y": 440,
+							"w": 150,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_gKZV7ESH",
+						"type": "block",
+						"position": {
+							"x": 80,
+							"y": 530,
+							"w": 270,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_LoHs9L51",
+						"type": "block",
+						"position": {
+							"x": 70,
+							"y": 620,
+							"w": 280,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_sR13pFVb",
+						"type": "block",
+						"position": {
+							"x": 70,
+							"y": 700,
+							"w": 280,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_eSAQZHPC",
+						"type": "block",
+						"position": {
+							"x": 80,
+							"y": 780,
+							"w": 270,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_RRIMTEr8",
+						"type": "block",
+						"position": {
+							"x": 130,
+							"y": 860,
+							"w": 220,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_vkvK5Axr",
+						"type": "block",
+						"position": {
+							"x": 90,
+							"y": 920,
+							"w": 260,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_Q2pJhpKk",
+						"type": "block",
+						"position": {
+							"x": 1820,
+							"y": 430,
+							"w": 200,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ZLEMpbkB",
+						"type": "block",
+						"position": {
+							"x": 1820,
+							"y": 520,
+							"w": 240,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_1iwmpADV",
+						"type": "block",
+						"position": {
+							"x": 1820,
+							"y": 610,
+							"w": 130,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_vVWolHTt",
+						"type": "block",
+						"position": {
+							"x": 1820,
+							"y": 700,
+							"w": 150,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_c0LtIoq2",
+						"type": "block",
+						"position": {
+							"x": 1820,
+							"y": 790,
+							"w": 110,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			}
+		},
+		"options": {},
+		"tabs": {
+			"items": [
+				{
+					"label": "Capabilities - Use-Case - Personas",
+					"layoutId": "layout_XKR3NPbw"
+				}
+			]
+		}
+	},
+	"applicationProperties": {
+		"collapseNavigation": false
+	}
+}
+    ]]></definition>
+    <meta type="hiddenElements"><![CDATA[
+{
+	"hideEdit": false,
+	"hideOpenInSearch": false,
+	"hideExport": false
+}
+    ]]></meta>
+</dashboard>

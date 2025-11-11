@@ -1,0 +1,188 @@
+{
+    "modelName": "focus",
+    "displayName": "FOCUS v1.2",
+    "description": "FinOps Open Cost and Usage Specification - v1.2",
+    "objectSummary": {
+        "Event-Based": 1,
+        "Transaction-Based": 0,
+        "Search-Based": 0
+    },
+    "objects": [
+        {
+            "objectName": "cost",
+            "displayName": "Cost and Usage",
+            "parentName": "BaseEvent",
+            "comment": "",
+            "fields": [
+
+                /* =========================
+                   Account
+                ==========================*/
+                { "fieldName": "BillingAccountId", "type": "string", "displayName": "BillingAccountId", "comment": "Billing Account ID" },
+                { "fieldName": "BillingAccountName", "type": "string", "displayName": "BillingAccountName", "comment": "Billing Account Name" },
+                { "fieldName": "BillingAccountType", "type": "string", "displayName": "BillingAccountType", "comment": "Billing Account Type" },
+                { "fieldName": "SubAccountId", "type": "string", "displayName": "SubAccountId", "comment": "Sub-account ID" },
+                { "fieldName": "SubAccountName", "type": "string", "displayName": "SubAccountName", "comment": "Sub-account name" },
+                { "fieldName": "SubAccountType", "type": "string", "displayName": "SubAccountType", "comment": "Sub-account type" },
+
+                /* =========================
+                   Billing
+                ==========================*/
+                { "fieldName": "BilledCost", "type": "number", "displayName": "BilledCost", "comment": "Billed cost for the resource" },
+                { "fieldName": "BillingCurrency", "type": "string", "displayName": "BillingCurrency", "comment": "Currency used for billing" },
+                { "fieldName": "ConsumedQuantity", "type": "number", "displayName": "ConsumedQuantity", "comment": "Quantity consumed by the resource" },
+                { "fieldName": "ConsumedUnit", "type": "string", "displayName": "ConsumedUnit", "comment": "Unit of the consumed quantity" },
+                { "fieldName": "ContractedCost", "type": "number", "displayName": "ContractedCost", "comment": "Cost per the contract" },
+                { "fieldName": "ContractedUnitPrice", "type": "number", "displayName": "ContractedUnitPrice", "comment": "Unit price as per the contract" },
+                { "fieldName": "EffectiveCost", "type": "number", "displayName": "EffectiveCost", "comment": "Effective cost incurred" },
+                { "fieldName": "ListCost", "type": "number", "displayName": "ListCost", "comment": "List cost before discounts" },
+                { "fieldName": "ListUnitPrice", "type": "number", "displayName": "ListUnitPrice", "comment": "Unit price as per the list" },
+
+                /* =========================
+                   Capacity Reservation
+                ==========================*/
+                { "fieldName": "CapacityReservationId", "type": "string", "displayName": "CapacityReservationId", "comment": "ID of the capacity reservation" },
+                { "fieldName": "CapacityReservationStatus", "type": "string", "displayName": "CapacityReservationStatus", "comment": "Status of the capacity reservation" },
+
+                /* =========================
+                   Charge
+                ==========================*/
+                { "fieldName": "ChargeCategory", "type": "string", "displayName": "ChargeCategory", "comment": "Category of the charge" },
+                { "fieldName": "ChargeClass", "type": "string", "displayName": "ChargeClass", "comment": "Class of the charge" },
+                { "fieldName": "ChargeDescription", "type": "string", "displayName": "ChargeDescription", "comment": "Description of the charge" },
+                { "fieldName": "ChargeFrequency", "type": "string", "displayName": "ChargeFrequency", "comment": "Frequency of the charge" },
+                { "fieldName": "ChargePeriodStart", "type": "timestamp", "displayName": "ChargePeriodStart", "comment": "Start date of the charge period" },
+                { "fieldName": "ChargePeriodEnd", "type": "timestamp", "displayName": "ChargePeriodEnd", "comment": "End date of the charge period" },
+
+                /* =========================
+                   Commitment Discount
+                ==========================*/
+                { "fieldName": "CommitmentDiscountCategory", "type": "string", "displayName": "CommitmentDiscountCategory", "comment": "Category of the commitment discount" },
+                { "fieldName": "CommitmentDiscountId", "type": "string", "displayName": "CommitmentDiscountId", "comment": "ID of the commitment discount" },
+                { "fieldName": "CommitmentDiscountName", "type": "string", "displayName": "CommitmentDiscountName", "comment": "Name of the commitment discount" },
+                { "fieldName": "CommitmentDiscountQuantity", "type": "number", "displayName": "CommitmentDiscountQuantity", "comment": "Quantity of the commitment discount" },
+                { "fieldName": "CommitmentDiscountStatus", "type": "string", "displayName": "CommitmentDiscountStatus", "comment": "Status of the commitment discount" },
+                { "fieldName": "CommitmentDiscountType", "type": "string", "displayName": "CommitmentDiscountType", "comment": "Type of the commitment discount" },
+                { "fieldName": "CommitmentDiscountUnit", "type": "string", "displayName": "CommitmentDiscountUnit", "comment": "Unit of the commitment discount" },
+
+                /* =========================
+                   Invoice
+                ==========================*/
+                { "fieldName": "InvoiceId", "type": "string", "displayName": "InvoiceId", "comment": "Unique identifier of the invoice" },
+                { "fieldName": "InvoiceIssuerName", "type": "string", "displayName": "InvoiceIssuerName", "comment": "Issuer of the invoice" },
+
+                /* =========================
+                   Provider & Publisher
+                ==========================*/
+                { "fieldName": "ProviderName", "type": "string", "displayName": "ProviderName", "comment": "Cloud provider (e.g., AWS, Azure)" },
+                { "fieldName": "PublisherName", "type": "string", "displayName": "PublisherName", "comment": "Service publisher" },
+
+                /* =========================
+                   Location
+                ==========================*/
+                { "fieldName": "AvailabilityZone", "type": "string", "displayName": "AvailabilityZone", "comment": "Availability Zone of the resource" },
+                { "fieldName": "RegionId", "type": "string", "displayName": "RegionId", "comment": "Region ID" },
+                { "fieldName": "RegionName", "type": "string", "displayName": "RegionName", "comment": "Region name" },
+
+                /* =========================
+                   Pricing
+                ==========================*/
+                { "fieldName": "PricingCategory", "type": "string", "displayName": "PricingCategory", "comment": "Pricing category" },
+                { "fieldName": "PricingCurrency", "type": "string", "displayName": "PricingCurrency", "comment": "Currency used for pricing" },
+                { "fieldName": "PricingCurrencyContractedUnitPrice", "type": "number", "displayName": "PricingCurrencyContractedUnitPrice", "comment": "Contracted unit price in pricing currency" },
+                { "fieldName": "PricingCurrencyEffectiveCost", "type": "number", "displayName": "PricingCurrencyEffectiveCost", "comment": "Effective cost in pricing currency" },
+                { "fieldName": "PricingCurrencyListUnitPrice", "type": "number", "displayName": "PricingCurrencyListUnitPrice", "comment": "List unit price in pricing currency" },
+                { "fieldName": "PricingQuantity", "type": "number", "displayName": "PricingQuantity", "comment": "Pricing quantity" },
+                { "fieldName": "PricingUnit", "type": "string", "displayName": "PricingUnit", "comment": "Unit of pricing" },
+
+                /* =========================
+                   Resource
+                ==========================*/
+                { "fieldName": "ResourceId", "type": "string", "displayName": "ResourceId", "comment": "Unique identifier of the resource" },
+                { "fieldName": "ResourceName", "type": "string", "displayName": "ResourceName", "comment": "Name of the resource" },
+                { "fieldName": "ResourceType", "type": "string", "displayName": "ResourceType", "comment": "Type of the resource (e.g., VM, storage)" },
+                { "fieldName": "Tags", "type": "string", "displayName": "Tags", "comment": "Tags associated with the resource" },
+
+                /* =========================
+                   Service
+                ==========================*/
+                { "fieldName": "ServiceCategory", "type": "string", "displayName": "ServiceCategory", "comment": "Service category" },
+                { "fieldName": "ServiceName", "type": "string", "displayName": "ServiceName", "comment": "Service name" },
+                { "fieldName": "ServiceSubcategory", "type": "string", "displayName": "ServiceSubcategory", "comment": "Service subcategory" },
+
+                /* =========================
+                   SKU
+                ==========================*/
+                { "fieldName": "SkuId", "type": "string", "displayName": "SkuId", "comment": "SKU ID" },
+                { "fieldName": "SkuMeter", "type": "string", "displayName": "SkuMeter", "comment": "Meter for the SKU" },
+                { "fieldName": "SkuPriceDetails", "type": "string", "displayName": "SkuPriceDetails", "comment": "Price details for the SKU" },
+                { "fieldName": "SkuPriceId", "type": "string", "displayName": "SkuPriceId", "comment": "Price ID for the SKU" },
+
+                /* =========================
+                   Timeframe
+                ==========================*/
+                { "fieldName": "BillingPeriodStart", "type": "timestamp", "displayName": "BillingPeriodStart", "comment": "Start date of the billing period" },
+                { "fieldName": "BillingPeriodEnd", "type": "timestamp", "displayName": "BillingPeriodEnd", "comment": "End date of the billing period" },
+
+                /* =========================
+                   BaseEvent
+                ==========================*/
+                { "fieldName": "_time", "type": "timestamp", "displayName": "_time", "comment": "" },
+                { "fieldName": "host", "type": "string", "displayName": "host", "comment": "" },
+                { "fieldName": "source", "type": "string", "displayName": "source", "comment": "" },
+                { "fieldName": "sourcetype", "type": "string", "displayName": "sourcetype", "comment": "" }
+            ],
+
+            "calculations": [
+               {
+                  "calculationID": "calc_RunIngestTime",
+                  "calculationType": "Eval",
+                  "comment": "Derive RunIngestTime from _indextime",
+                  "expression": "_indextime",
+                  "outputFields": [
+                        {
+                           "fieldName": "RunIngestTime",
+                           "type": "number",
+                           "displayName": "RunIngestTime",
+                           "comment": "Timestamp when data was ingested (_indextime)"
+                        }
+                  ]
+               },
+               {
+                  "calculationID": "calc_RunRawData",
+                  "calculationType": "Eval",
+                  "comment": "Extracts raw event text into a field",
+                  "expression": "_raw",
+                  "outputFields": [
+                        {
+                           "fieldName": "RunRawData",
+                           "type": "string",
+                           "displayName": "RunRawData",
+                           "comment": "Stores the original raw event content"
+                        }
+                  ]
+               },
+               {
+                  "calculationID": "clac_RunTags",
+                  "comment": "Gets Tags field and sets n/a into a null() field",
+                  "calculationType": "Eval",
+                  "expression": "if(isnull(Tags) , \"n/a\", Tags)",
+                  "outputFields": [
+                        {
+                            "fieldName": "RunTags",
+                            "type": "string",
+                            "displayName": "RunTags",
+                            "comment": "Fill up null() fields with n/a"
+                        }
+                    ]
+                }
+            ],
+
+            "constraints": [
+                { "search": "index=finops tag=cost" }
+            ],
+            "lineage": "cost"
+        }
+    ],
+    "objectNameList": ["cost"]
+}

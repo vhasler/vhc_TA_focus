@@ -1,0 +1,2387 @@
+<dashboard version="2" theme="dark">
+    <label>Cost and usage</label>
+    <description>Based on FOCUS Specification</description>
+    <definition><![CDATA[
+{
+	"title": "FOCUS cost and usage",
+	"description": "Based on FOCUS Specification",
+	"inputs": {
+		"input_4HfwBlQu": {
+			"eventHandlers": [
+				{
+					"options": {},
+					"type": "drilldown.resetTokens"
+				}
+			],
+			"options": {
+				"label": "Reset Filter"
+			},
+			"type": "input.button"
+		},
+		"input_6B0gTm7t": {
+			"dataSources": {
+				"primary": "ds_6AhezFiK"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "ChargeCategory"
+			},
+			"title": "Charge Category",
+			"type": "input.multiselect"
+		},
+		"input_6dKyTw3b": {
+			"options": {
+				"backgroundColor": "#11161C",
+				"defaultValue": "ServiceCategory",
+				"items": [
+					{
+						"label": "Provider",
+						"value": "ProviderName"
+					},
+					{
+						"label": "Billing Account",
+						"value": "BillingAccountName"
+					},
+					{
+						"label": "Charge Category",
+						"value": "ChargeCategory"
+					},
+					{
+						"label": "Sub Account",
+						"value": "SubAccountName"
+					},
+					{
+						"label": "Service Category",
+						"value": "ServiceCategory"
+					},
+					{
+						"label": "Service",
+						"value": "ServiceName"
+					}
+				],
+				"token": "GroupBy"
+			},
+			"title": "Group by:",
+			"type": "input.dropdown"
+		},
+		"input_MDK4GtAn": {
+			"containerOptions": {
+				"visibility": {
+					"hideWhenNoData": true
+				}
+			},
+			"context": {
+				"formattedConfig": {
+					"number": {
+						"prefix": ""
+					}
+				},
+				"formattedStatics": ">statics | formatByType(formattedConfig)",
+				"label": ">primary | seriesByName(\"key\") | renameSeries(\"label\") | formatByType(formattedConfig)",
+				"statics": [
+					[
+						"All"
+					],
+					[
+						"*"
+					]
+				],
+				"value": ">primary | seriesByName(\"key_values\") | renameSeries(\"value\") | formatByType(formattedConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_eqi7mH0X"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": ">frame(label, value) | prepend(formattedStatics) | objects()",
+				"token": "TagKey"
+			},
+			"title": "Tag Key",
+			"type": "input.multiselect"
+		},
+		"input_R1oBE7KT": {
+			"context": {
+				"formattedConfig": {
+					"number": {
+						"prefix": ""
+					}
+				},
+				"formattedStatics": ">statics | formatByType(formattedConfig)",
+				"label": ">primary | seriesByName(\"ResourceName\") | renameSeries(\"label\") | formatByType(formattedConfig)",
+				"statics": [
+					[
+						"All"
+					],
+					[
+						"*"
+					]
+				],
+				"value": ">primary | seriesByName(\"ResourceId\") | renameSeries(\"value\") | formatByType(formattedConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_X1oWDcuz"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": ">frame(label, value) | prepend(formattedStatics) | objects()",
+				"token": "ResourceId"
+			},
+			"title": "Resource",
+			"type": "input.multiselect"
+		},
+		"input_Yw70NHFu": {
+			"containerOptions": {
+				"visibility": {
+					"hideWhenNoData": true
+				}
+			},
+			"context": {
+				"formattedConfig": {
+					"number": {
+						"prefix": ""
+					}
+				},
+				"formattedStatics": ">statics | formatByType(formattedConfig)",
+				"label": ">primary | seriesByName(\"value\") | renameSeries(\"label\") | formatByType(formattedConfig)",
+				"statics": [
+					[
+						"All"
+					],
+					[
+						"*"
+					]
+				],
+				"value": ">primary | seriesByName(\"value_values\") | renameSeries(\"value\") | formatByType(formattedConfig)"
+			},
+			"dataSources": {
+				"primary": "ds_JVxCZXhb"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": ">frame(label, value) | prepend(formattedStatics) | objects()",
+				"token": "TagValue"
+			},
+			"title": "Tag Value",
+			"type": "input.multiselect"
+		},
+		"input_aZ7CjU0e": {
+			"dataSources": {
+				"primary": "ds_gY4qFOMD"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "ServiceCategory"
+			},
+			"title": "Service Category",
+			"type": "input.multiselect"
+		},
+		"input_abTU5yhh": {
+			"dataSources": {
+				"primary": "ds_eR4ijEZE"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "BillingAccountName"
+			},
+			"title": "Billing Account",
+			"type": "input.multiselect"
+		},
+		"input_dHNPWfZE": {
+			"dataSources": {
+				"primary": "ds_zmCak8sX"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "ProviderName"
+			},
+			"title": "Provider",
+			"type": "input.multiselect"
+		},
+		"input_global_trp": {
+			"options": {
+				"defaultValue": "@mon,now",
+				"token": "global_time"
+			},
+			"title": "Select Period",
+			"type": "input.timerange"
+		},
+		"input_p2oqJ9xu": {
+			"dataSources": {
+				"primary": "ds_R7rOsVDJ"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "SubAccountName"
+			},
+			"title": "Sub Account",
+			"type": "input.multiselect"
+		},
+		"input_v60LIOzf": {
+			"options": {
+				"backgroundColor": "#11161C",
+				"defaultValue": "ServiceCategory",
+				"items": [
+					{
+						"label": "Provider",
+						"value": "ProviderName"
+					},
+					{
+						"label": "Billing Account",
+						"value": "BillingAccountName"
+					},
+					{
+						"label": "Charge Category",
+						"value": "ChargeCategory"
+					},
+					{
+						"label": "Sub Account",
+						"value": "SubAccountName"
+					},
+					{
+						"label": "Service Category",
+						"value": "ServiceCategory"
+					},
+					{
+						"label": "Service",
+						"value": "ServiceName"
+					}
+				],
+				"token": "GroupBy"
+			},
+			"title": "Group by:",
+			"type": "input.dropdown"
+		},
+		"input_whROvuJW": {
+			"dataSources": {
+				"primary": "ds_Dropdown_ServiceName"
+			},
+			"options": {
+				"defaultValue": [
+					"*"
+				],
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "ServiceName"
+			},
+			"title": "Service",
+			"type": "input.multiselect"
+		}
+	},
+	"defaults": {
+		"dataSources": {
+			"ds.search": {
+				"options": {
+					"queryParameters": {
+						"earliest": "$global_time.earliest$",
+						"latest": "$global_time.latest$"
+					}
+				}
+			}
+		},
+		"visualizations": {
+			"global": {
+				"showProgressBar": true
+			}
+		}
+	},
+	"visualizations": {
+		"viz_2i9GXUmx": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_79PyipUi"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisTitleText": "Charge Period (Month)"
+			},
+			"title": "Service Category | Effective Cost by Period",
+			"type": "splunk.column"
+		},
+		"viz_3HfVnx8F": {
+			"options": {
+				"backgroundColor": "#11161C",
+				"markdown": ""
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_3mmNKfDZ": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_uwNsWRqI"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"dataValuesDisplay": "all",
+				"legendDisplay": "bottom",
+				"stackMode": "stacked",
+				"xAxisTitleText": ""
+			},
+			"title": "Services | Effective Cost per Sub Account",
+			"type": "splunk.bar"
+		},
+		"viz_4an4MbZ8": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_kXoucBgg"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe",
+				"numberPrecision": 2,
+				"unit": "$global_currency:result.cur$"
+			},
+			"title": "Total Effective Cost",
+			"type": "splunk.singlevalue"
+		},
+		"viz_4kz3byPf": {
+			"options": {
+				"fontColor": "#708794",
+				"markdown": "#\n# Month over Month (MoM) [last 12 month]\n**Info:** This panel is not affected by the main filters above — only the panel-specific filters are active."
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_6EWlWKFA": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_GND15EqV"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C"
+			},
+			"title": "Service Category | Effective Cost per Provider",
+			"type": "splunk.sankey"
+		},
+		"viz_7ZN4HWZh": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_UJkG5tKf"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe",
+				"numberPrecision": 2,
+				"unit": "%",
+				"trendDisplay": "off",
+				"sparklineDisplay": "off"
+			},
+			"title": "Total Tag Coverage",
+			"type": "splunk.singlevalue"
+		},
+		"viz_7hlUZQQu": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				},
+				"visibility": {
+					"hideWhenNoData": true
+				}
+			},
+			"dataSources": {
+				"primary": "ds_1WRzJnmj"
+			},
+			"description": "Click on value for drilldown",
+			"eventHandlers": [
+				{
+					"options": {
+						"tokens": [
+							{
+								"token": "tok_tag_filter",
+								"value": "0"
+							}
+						]
+					},
+					"type": "drilldown.setToken"
+				}
+			],
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#f8be44",
+				"trendColor": "#708794",
+				"trendDisplay": "off"
+			},
+			"title": "Total Active Untagged Resources",
+			"type": "splunk.singlevalue"
+		},
+		"viz_8bNJxhGx": {
+			"options": {
+				"fontColor": "#708794",
+				"markdown": ""
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_97zMLTQn": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_FwJxcVed"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe"
+			},
+			"title": "Sub Accounts",
+			"type": "splunk.singlevalue"
+		},
+		"viz_AHOpzkNF": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"context": {
+				"ResourceColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				}
+			},
+			"dataSources": {
+				"primary": "ds_MS2qT1QY"
+			},
+			"description": "Effective Cost by Resource Id [last 30 days]",
+			"options": {
+				"backgroundColor": "#11161C",
+				"columnFormat": {
+					"Resource": {
+						"align": "left",
+						"data": "> table | seriesByName(\"Resource\") | formatByType(ResourceColumnFormatEditorConfig)",
+						"headerAlign": "left",
+						"textOverflow": "break-word"
+					}
+				},
+				"count": 100,
+				"headerVisibility": "fixed",
+				"tableFormat": {
+					"align": "right",
+					"headerAlign": "right",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)",
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"title": "Top 10 Resources",
+			"type": "splunk.table"
+		},
+		"viz_Aac1g1lD": {
+			"options": {
+				"fontColor": "#708794",
+				"markdown": "#\n# Tagging\n**Info:** The main filter bar controls the data displayed in all panels below.\n\n**Tip:** Click on the numbers to narrow down the data (reset with 'Reset Filter' Button)"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_CVwNNm9x": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				},
+				"visibility": {
+					"hideWhenNoData": true
+				}
+			},
+			"dataSources": {
+				"primary": "ds_tauTbTvN"
+			},
+			"options": {
+				"backgroundColor": "#11161C",
+				"headerVisibility": "fixed",
+				"tableFormat": {
+					"align": "left",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)",
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"title": "Total Unique Resources",
+			"type": "splunk.table"
+		},
+		"viz_F6FLk3zm": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_pciCswG4"
+			},
+			"description": "Only where Effective Cost > 0",
+			"options": {
+				"backgroundColor": "#11161C",
+				"collapseLabel": "",
+				"collapseThreshold": 0.00001,
+				"labelDisplay": "valuesAndPercentage",
+				"seriesColors": [
+					"#7B56DB",
+					"#009CEB",
+					"#00CDAF",
+					"#DD9900",
+					"#FF677B",
+					"#CB2196",
+					"#813193",
+					"#0051B5",
+					"#008C80",
+					"#99B100",
+					"#FFA476",
+					"#FF6ACE",
+					"#AE8CFF",
+					"#00689D",
+					"#00490A",
+					"#465D00",
+					"#9D6300",
+					"#F6540B",
+					"#FF969E",
+					"#E47BFE"
+				],
+				"showDonutHole": true
+			},
+			"title": "Region(s) by Name",
+			"type": "splunk.pie"
+		},
+		"viz_Gu12ilJC": {
+			"options": {
+				"markdown": ""
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_IkZz1Sha": {
+			"options": {
+				"fontColor": "#708794",
+				"markdown": "#\n# Overview\n**Info:** The main filter bar controls the data displayed in all panels below. (Excluding Credits, Adjustments and Tax)"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_Oj4QNw7n": {
+			"options": {
+				"fontColor": "#708794",
+				"markdown": "#\n# Tag Coverage Grouped By\n**Info:** The main filter bar controls the data displayed in all panels below."
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_OxWM5oPr": {
+			"options": {
+				"fontColor": "#708794",
+				"markdown": "#\n# Details\n**Info:** The main filter bar controls the data displayed in all panels below. (Excluding Credits, Adjustments and Tax)"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_QLIqCqQR": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				},
+				"visibility": {}
+			},
+			"context": {
+				"dataColorConfig": [
+					{
+						"to": 20,
+						"value": "#D41F1F"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#D94E17"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#669922"
+					},
+					{
+						"from": 80,
+						"value": "#118832"
+					}
+				]
+			},
+			"dataSources": {
+				"primary": "ds_sN98RtRb"
+			},
+			"description": "Only where Effective Cost > 0",
+			"options": {
+				"backgroundColor": "#11161C",
+				"baseLayerTileServer": "",
+				"baseLayerTileServerType": "raster",
+				"center": [
+					50.912658349172744,
+					5.852154082768493
+				],
+				"layers": [
+					{
+						"dataColors": ""
+					}
+				],
+				"showBaseLayer": false,
+				"zoom": 3.635106388658519
+			},
+			"showLastUpdated": false,
+			"showProgressBar": true,
+			"title": "Distributed Regions by Effective Cost",
+			"type": "splunk.map"
+		},
+		"viz_RtmhHcEj": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_Y3Ps6mD3"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe"
+			},
+			"title": "Region Count",
+			"type": "splunk.singlevalue"
+		},
+		"viz_UTTw3GRR": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_4wtvH8LP"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe"
+			},
+			"title": "Provider",
+			"type": "splunk.singlevalue"
+		},
+		"viz_VaZOEKkM": {
+			"options": {
+				"markdown": ""
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_XRScVO05": {
+			"options": {
+				"fontColor": "#708794",
+				"markdown": "#\n# Prediction  [based on last 4 month]\n**Info:** This panel is not affected by the main filters above."
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_aImTHcka": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_1098GVGh"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe"
+			},
+			"title": "Service Categories",
+			"type": "splunk.singlevalue"
+		},
+		"viz_akBdqy7E": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"context": {
+				"majorColorEditorConfig": [
+					{
+						"to": 20,
+						"value": "#252214"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#253223"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#245442"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#237561"
+					},
+					{
+						"from": 80,
+						"value": "#238570"
+					}
+				]
+			},
+			"dataSources": {
+				"primary": "ds_3jGSlQgw"
+			},
+			"description": "Grouped by $GroupBy$",
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "> majorValue | rangeValue(majorColorEditorConfig)",
+				"numberPrecision": 2,
+				"splitByLayout": "trellis",
+				"trellisBackgroundColor": "#11161C",
+				"trellisMinColumnWidth": 120,
+				"trellisRowHeight": 100,
+				"trendDisplay": "off",
+				"unit": "%"
+			},
+			"title": "Tag Coverage",
+			"type": "splunk.singlevalue"
+		},
+		"viz_cjZtWBzQ": {
+			"options": {
+				"backgroundColor": "#11161C",
+				"fontColor": "#708794",
+				"markdown": "**Info:** \n- ▲ 100.00 % indicates costs occurred for the first time.\n\n-  ▼ 100.00 % means no costs were incurred anymore.\n\n- Other percentage values show normal month-to-month fluctuations."
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_eJ4Itc2A": {
+			"options": {
+				"markdown": ""
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_fD3ktPWz": {
+			"options": {
+				"markdown": ""
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_fdjxGYZw": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"context": {
+				"Apr_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Apr_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Aug_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Aug_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Dec_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Dec_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Feb_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Feb_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Jan_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Jan_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Jul_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Jul_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Jun_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Jun_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Mar_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Mar_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"May_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"May_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Nov_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Nov_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Oct_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Oct_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				],
+				"Sep_chgColumnFormatEditorConfig": {
+					"string": {
+						"unitPosition": "after"
+					}
+				},
+				"Sep_chgRowColorsEditorConfig": [
+					{
+						"match": "▼*",
+						"value": "#4fa484"
+					},
+					{
+						"match": "⦿*",
+						"value": "#008cb4"
+					},
+					{
+						"match": "▲*",
+						"value": "#874efe"
+					}
+				]
+			},
+			"dataSources": {
+				"primary": "ds_9cwzwFjs"
+			},
+			"description": "Grouped by $GroupBy$",
+			"options": {
+				"backgroundColor": "#11161C",
+				"columnFormat": {
+					"Apr": {
+						"data": "> table | seriesByName(\"Apr\") | formatByType(Apr_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Apr\") | matchValue(Apr_chgRowColorsEditorConfig)"
+					},
+					"Aug": {
+						"data": "> table | seriesByName(\"Aug\") | formatByType(Aug_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Aug\") | matchValue(Aug_chgRowColorsEditorConfig)"
+					},
+					"Dec": {
+						"data": "> table | seriesByName(\"Dec\") | formatByType(Dec_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Dec\") | matchValue(Dec_chgRowColorsEditorConfig)"
+					},
+					"Feb": {
+						"data": "> table | seriesByName(\"Feb\") | formatByType(Feb_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Feb\") | matchValue(Feb_chgRowColorsEditorConfig)"
+					},
+					"Jan": {
+						"data": "> table | seriesByName(\"Jan\") | formatByType(Jan_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Jan\") | matchValue(Jan_chgRowColorsEditorConfig)"
+					},
+					"Jul": {
+						"data": "> table | seriesByName(\"Jul\") | formatByType(Jul_chg_ColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Jul\") | matchValue(Jul_chgRowColorsEditorConfig)"
+					},
+					"Jun": {
+						"data": "> table | seriesByName(\"Jun\") | formatByType(Jun_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Jun\") | matchValue(Jun_chgRowColorsEditorConfig)"
+					},
+					"Mar": {
+						"data": "> table | seriesByName(\"Mar\") | formatByType(Mar_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Mar\") | matchValue(Mar_chgRowColorsEditorConfig)"
+					},
+					"May": {
+						"data": "> table | seriesByName(\"May\") | formatByType(May_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"May\") | matchValue(May_chgRowColorsEditorConfig)"
+					},
+					"Nov": {
+						"data": "> table | seriesByName(\"Nov\") | formatByType(Nov_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Nov\") | matchValue(Nov_chgRowColorsEditorConfig)"
+					},
+					"Oct": {
+						"data": "> table | seriesByName(\"Oct\") | formatByType(Oct_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Oct\") | matchValue(Oct_chgRowColorsEditorConfig)"
+					},
+					"Sep": {
+						"data": "> table | seriesByName(\"Sep\") | formatByType(Sep_chgColumnFormatEditorConfig)",
+						"rowColors": "> table | seriesByName(\"Sep\") | matchValue(Sep_chgRowColorsEditorConfig)"
+					}
+				},
+				"count": 20,
+				"headerVisibility": "fixed",
+				"tableFormat": {
+					"align": "right",
+					"headerAlign": "right",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)",
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"title": "Percent - MoM Change",
+			"type": "splunk.table"
+		},
+		"viz_gyu1VThF": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_ZZsOMeiB"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C"
+			},
+			"title": "Services | Effective Cost per Provider",
+			"type": "splunk.sankey"
+		},
+		"viz_hO8FNgJg": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_L24Vo6rM"
+			},
+			"description": "Grouped by $GroupBy$",
+			"options": {
+				"backgroundColor": "#11161C",
+				"dataValuesDisplay": "all",
+				"xAxisTitleText": "Month",
+				"yAxisTitleText": "Effective Cost"
+			},
+			"showLastUpdated": false,
+			"showProgressBar": true,
+			"title": "Effective Cost - MoM Change",
+			"type": "splunk.line"
+		},
+		"viz_hjtw3Uqg": {
+			"options": {
+				"fontColor": "#708794",
+				"markdown": "#\n# Resources [last 30 days]\nInfo: No filter from above works here"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_iriO0YIJ": {
+			"options": {
+				"markdown": ""
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_lFHPJRWp": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				},
+				"visibility": {
+					"hideWhenNoData": true
+				}
+			},
+			"dataSources": {
+				"primary": "ds_Oh1gcVKX"
+			},
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe",
+				"numberPrecision": 2,
+				"unit": "$global_currency:result.cur$"
+			},
+			"title": "Total Untagged Effective Costs",
+			"type": "splunk.singlevalue"
+		},
+		"viz_lNevDlJk": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_24yEwVJS"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe"
+			},
+			"title": "Services",
+			"type": "splunk.singlevalue"
+		},
+		"viz_lUdrMGz2": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				},
+				"visibility": {
+					"hideWhenNoData": true
+				}
+			},
+			"dataSources": {
+				"primary": "ds_FdPke2q4"
+			},
+			"description": "Click on value for drilldown",
+			"eventHandlers": [
+				{
+					"options": {
+						"tokens": [
+							{
+								"token": "tok_tag_filter",
+								"value": "1"
+							}
+						]
+					},
+					"type": "drilldown.setToken"
+				}
+			],
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#4fa484",
+				"trendColor": "#708794",
+				"trendDisplay": "off"
+			},
+			"title": "Total Active Tagged Resources",
+			"type": "splunk.singlevalue"
+		},
+		"viz_qcUjdfyH": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_HXYSAwST"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"dataValuesDisplay": "all",
+				"legendDisplay": "bottom",
+				"stackMode": "stacked"
+			},
+			"title": "Service Category | Effective Cost per Sub Account",
+			"type": "splunk.bar"
+		},
+		"viz_sk77sK7o": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_6w4QpChN"
+			},
+			"description": "Grouped by $GroupBy$",
+			"options": {
+				"backgroundColor": "#11161C",
+				"dataValuesDisplay": "all",
+				"showYAxisExtendedRange": false,
+				"xAxisTitleText": "",
+				"yAxisMax": 100,
+				"yAxisTitleText": "Tag Coverage [%]"
+			},
+			"showLastUpdated": false,
+			"showProgressBar": true,
+			"title": "Tag Coverage",
+			"type": "splunk.bar"
+		},
+		"viz_smfQC8YI": {
+			"containerOptions": {
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_qOKt7EqQ"
+			},
+			"description": "Based on last 4 months",
+			"options": {
+				"backgroundColor": "#11161C",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Predicted Cost"
+				],
+				"xAxisLabelRotation": -45,
+				"xAxisTitleText": "Months"
+			},
+			"title": "Effective Cost prediction",
+			"type": "splunk.column"
+		},
+		"viz_tCDurHDW": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_obavAvZq"
+			},
+			"description": "Effective Cost by Resource Id [last 30 days]",
+			"options": {
+				"backgroundColor": "#11161C",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisLabelRotation": -45,
+				"xAxisTitleText": "Month",
+				"y2AxisTitleText": "",
+				"y2AxisTitleVisibility": "hide",
+				"yAxisTitleText": "Effective Cost"
+			},
+			"title": "Top 10 Resources [+OTHER]",
+			"type": "splunk.column"
+		},
+		"viz_tzGK71v9": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				},
+				"visibility": {
+					"hideWhenNoData": true
+				}
+			},
+			"dataSources": {
+				"primary": "ds_tgeJ5HIg"
+			},
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe",
+				"numberPrecision": 2,
+				"unit": "$global_currency:result.cur$"
+			},
+			"title": "Total Tagged Effective Costs",
+			"type": "splunk.singlevalue"
+		},
+		"viz_vIbUHiWB": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_HzWM7c52"
+			},
+			"description": "Click on value for drilldown",
+			"eventHandlers": [
+				{
+					"options": {
+						"tokens": [
+							{
+								"token": "tok_tag_filter",
+								"value": "*"
+							}
+						]
+					},
+					"type": "drilldown.setToken"
+				}
+			],
+			"options": {
+				"backgroundColor": "#11161C",
+				"majorColor": "#874efe",
+				"trendColor": "#708794",
+				"trendDisplay": "off"
+			},
+			"title": "Total Active Resources",
+			"type": "splunk.singlevalue"
+		},
+		"viz_wN4i5AtH": {
+			"containerOptions": {
+				"description": {
+					"color": "#708794"
+				},
+				"title": {
+					"color": "#4fa484"
+				}
+			},
+			"dataSources": {
+				"primary": "ds_OI4bXS1d"
+			},
+			"description": "",
+			"options": {
+				"backgroundColor": "#11161C",
+				"dataValuesDisplay": "all",
+				"overlayFields": [
+					"Total"
+				],
+				"stackMode": "stacked",
+				"xAxisTitleText": "Charge Period (Month)"
+			},
+			"title": "Services | Effective Cost by Period",
+			"type": "splunk.column"
+		}
+	},
+	"dataSources": {
+		"ds_1098GVGh": {
+			"name": "SUMMARY - Single Value - Total Service Category",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats dc(ServiceCategory)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_1WRzJnmj": {
+			"name": "ANALYZE - SingleValue - Resource with no tags",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag`\n`focus_tag_timetable` \n| stats latest(no_tag) as no_tag by _time\n| where no_tag like(\"%\")"
+			},
+			"type": "ds.chain"
+		},
+		"ds_24yEwVJS": {
+			"name": "SUMMARY - SingleValue - Total Services",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats dc(ServiceName)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_3jGSlQgw": {
+			"name": "ANALYZE - SingelValue Trellis - Tag Coverage over Group by",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag`\n| stats max(with_tag) as with_tag  min(no_tag) as no_tag dc(ResourceId) as total by ResourceId $GroupBy$ \n| stats sum(with_tag) as with_tag sum(no_tag) as no_tag sum(total) as total by $GroupBy$\n| eval with_perc = if(isnull(round(100*with_tag/total,2)), 0, round(100*with_tag/total,2))\n| fields $GroupBy$ with_perc"
+			},
+			"type": "ds.chain"
+		},
+		"ds_4wtvH8LP": {
+			"name": "SUMMARY - SingleValue - Total Provider",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats dc(ProviderName)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_6AhezFiK": {
+			"name": "FILTER - Dropdown - Charge Category",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| dedup ChargeCategory\n| table ChargeCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_6w4QpChN": {
+			"name": "ANALYZE - Bar - Tagged by ServiceCategory",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag`\n| stats max(with_tag) as with_tag  min(no_tag) as no_tag dc(ResourceId) as total by ResourceId $GroupBy$ \n| stats sum(with_tag) as with_tag sum(no_tag) as no_tag sum(total) as total by $GroupBy$\n| eval with_perc = if(isnull(round(100*with_tag/total,2)), 0, round(100*with_tag/total,2))\n| fields $GroupBy$ with_perc"
+			},
+			"type": "ds.chain"
+		},
+		"ds_79PyipUi": {
+			"name": "SUMMARY - Table - Effective Cost by Service Category",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| timechart eval(round(sum(sumEffectiveCost),2)) as EffectiveCost BY ServiceCategory \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_9cwzwFjs": {
+			"name": "TREND - fixed Period - Table - Percent Change by Group",
+			"options": {
+				"query": "| `focus_base_search`\n| bin _time span=1mon \n| stats sum(eval(round(sumEffectiveCost,2))) as EffectiveCost by _time $GroupBy$ BillingCurrency \n    ```missing month with fill with 0 ```\n| eval SvcCur = $GroupBy$.\"|\".BillingCurrency \n| timechart span=1mon sum(EffectiveCost) as EffectiveCost by SvcCur limit=0 \n| fillnull value=0 \n| untable _time SvcCur EffectiveCost \n| rex field=SvcCur \"(?<$GroupBy$>.*)\\|(?<BillingCurrency>.*)\"\n    ```MoM calculation```\n| sort $GroupBy$ _time \n| streamstats current=f last(EffectiveCost) as prevCost by $GroupBy$ BillingCurrency \n| eval prevCost = if(isnull(prevCost), 0, prevCost) \n| eval mom_abs = if(isnull(prevCost), 0, round(EffectiveCost - prevCost,2)) \n| eval mom_pct = case(\n    prevCost=0 AND EffectiveCost>0, 100.00,\n    prevCost=0 AND EffectiveCost=0, null(),\n    true(), round((EffectiveCost - prevCost)/prevCost*100,2)\n)\n\n```set timeframe -1month to avoid values from the actual month```\n| eventstats latest(_time) as t0 \n| eval t0_prev = relative_time(t0,\"@mon\") \n| eval t2 = relative_time(t0_prev,\"-12mon@mon\") \n| where _time>=t2 AND _time<=t0_prev\n    ```define table values and xyseries```\n| eval col = strftime(_time,\"%b\") \n| fields $GroupBy$ col mom_pct \n| xyseries $GroupBy$ col mom_pct \n    ```transpose to sort columns over month```\n| transpose 0 \n| eval sortorder = case(column=\"$GroupBy$\", 0, column=\"Jan\",1, column=\"Feb\",2, column=\"Mar\",3, column=\"Apr\",4,\n    column=\"May\",5, column=\"Jun\",6, column=\"Jul\",7, column=\"Aug\",8,\n    column=\"Sep\",9, column=\"Oct\", 10, column=\"Nov\", 11, column=\"Dec\", 12, 1==1, 99) \n| sort + sortorder \n| fields - sortorder\n    ```transpose back to table```\n| transpose 0 header_field=column \n| fields - column\n\n```format month output values```\n| foreach Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec [\n    eval <<FIELD>> = case(\n    <<FIELD>> = 0, \"⦿ \".tostring(abs('<<FIELD>>'),\"commas\").\" %\",\n    <<FIELD>> < 0, \"▼ \".tostring(abs('<<FIELD>>'),\"commas\").\" %\",\n    <<FIELD>> > 0, \"▲ \".tostring(abs('<<FIELD>>'),\"commas\").\" %\", 1==1, null())\n    ]",
+				"queryParameters": {
+					"earliest": "-12mon@mon",
+					"latest": "@mon"
+				}
+			},
+			"type": "ds.search"
+		},
+		"ds_BASEwithFILTER": {
+			"name": "BASE Search with Filter",
+			"options": {
+				"query": "| `focus_search`\nAND cost.ProviderName IN ($ProviderName|s$) \nAND cost.BillingAccountName IN ($BillingAccountName|s$) \nAND cost.ChargeCategory IN ($ChargeCategory|s$) \nAND cost.SubAccountName IN ($SubAccountName|s$) \nAND cost.ServiceCategory IN ($ServiceCategory|s$)\nAND cost.ServiceName IN ($ServiceName|s$) \nAND cost.ResourceId IN ($ResourceId|s$) \nAND cost.RunTags IN ($TagKey|s$) \nAND cost.RunTags IN ($TagValue|s$)\n`focus_tstats_by`",
+				"queryParameters": {
+					"earliest": "$global_time.earliest$",
+					"latest": "$global_time.latest$"
+				}
+			},
+			"type": "ds.search"
+		},
+		"ds_Dropdown_ServiceName": {
+			"name": "FILTER - Dropdown - Service Name",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| dedup ServiceName \n| table ServiceName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_FdPke2q4": {
+			"name": "ANALYZE - SingleValue - Resource with tags",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag`\n`focus_tag_timetable` \n| stats latest(with_tag) as with_tag by _time\n| where with_tag like(\"%\")"
+			},
+			"type": "ds.chain"
+		},
+		"ds_FwJxcVed": {
+			"name": "SUMMARY - Singel Value - Total Sub Accounts",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats dc(SubAccountName)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_GND15EqV": {
+			"name": "SUMMARY - Sankey - Effective Cost by Service Category per Provider",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats sum(sumEffectiveCost) as EffectiveCost \n    BY ProviderName, ServiceCategory \n| where EffectiveCost > 0"
+			},
+			"type": "ds.chain"
+		},
+		"ds_HXYSAwST": {
+			"name": "SUMMARY - Bar - Sub Account Effective Cost per Service Category",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| chart sum(eval(round(sumEffectiveCost,2))) as EffectiveCost by SubAccountName ServiceCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_HzWM7c52": {
+			"name": "ANALYZE - SingleValue - Total Resource",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| timechart span=1d dc(ResourceId) as ResourceId\n| where ResourceId > 0 \n| stats latest(ResourceId) as total by _time"
+			},
+			"type": "ds.chain"
+		},
+		"ds_JVxCZXhb": {
+			"name": "FILTER - Dropdown - Tag Value",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag_values`"
+			},
+			"type": "ds.chain"
+		},
+		"ds_L24Vo6rM": {
+			"name": "TREND - fixed Period - Line - MoM Effective Cost Change by Group",
+			"options": {
+				"query": "| `focus_base_search`\n| timechart span=1mon sum(eval(round(sumEffectiveCost,2))) as EffectiveCost by $GroupBy$",
+				"queryParameters": {
+					"earliest": "-12mon@mon",
+					"latest": "@mon"
+				}
+			},
+			"type": "ds.search"
+		},
+		"ds_MS2qT1QY": {
+			"name": "TREND - fixed Period - Table - Effective Cost per Top 10 Resource",
+			"options": {
+				"query": "| `focus_base_search` \n| stats sum(eval(round(sumConsumedQuantity,4))) as ConsumedQuantity sum(eval(round(sumEffectiveCost,2))) as EffectiveCost by ConsumedUnit ResourceId ProviderName BillingAccountId SubAccountName ServiceCategory BillingCurrency \n| addtotals row=true EffectiveCost \n| stats values(ProviderName) as \"Provider Name\" values(BillingAccountId) as \"Billing Account\" values(SubAccountName) as \"Sub Account\" values(ServiceCategory) as \"Service Category\" values(BillingCurrency) as BillingCurrency values(ConsumedUnit) as \"Consumed Units\" values(ConsumedQuantity) as \"Consumed Quantity\" values(EffectiveCost) as \"Effective Cost\" sum(eval(round(Total,2))) as Total by ResourceId \n| rename ResourceId as \"Resource Id\" \n| sort 0 -Total \n| head 10 \n| eval Total = tostring(Total,\"commas\").\" \".BillingCurrency\n| table \"Resource Id\", \"Service Category\", \"Consumed Units\", \"Consumed Quantity\", \"Effective Cost\", Total",
+				"queryParameters": {
+					"earliest": "-30d@d",
+					"latest": "@d"
+				}
+			},
+			"type": "ds.search"
+		},
+		"ds_OI4bXS1d": {
+			"name": "SUMMARY - Table - Effective Cost by Service Name",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| timechart eval(round(sum(sumEffectiveCost),2)) as EffectiveCost by ServiceName \n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_Oh1gcVKX": {
+			"name": "ANALYZE - SingleValue - EffectiveCost with no tags",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag`\n| stats sum(eval(round(sumEffectiveCost,2))) as Total by no_tag\n| fields Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_P6slqxCh": {
+			"name": "BASE Search",
+			"options": {
+				"query": "| `focus_base_search`\n"
+			},
+			"type": "ds.search"
+		},
+		"ds_R7rOsVDJ": {
+			"name": "FILTER - Dropdown - Sub Account Name",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| dedup SubAccountName\n| table SubAccountName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_UJkG5tKf": {
+			"name": "ANALYZE - SingleValue - Tag Coverage",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag`\n`focus_tag_timetable`\n| eval tag_perc = case(isnull(tag_perc), 0, 1=1, tag_perc)\n| stats latest(tag_perc) as tag_perc by _time\n| where tag_perc like(\"%\")"
+			},
+			"type": "ds.chain"
+		},
+		"ds_X1oWDcuz": {
+			"name": "FILTER - Dropdown - ResourceId",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| dedup ResourceId\n| table ResourceId ResourceName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_Y3Ps6mD3": {
+			"name": "SUMMARY - SingleValue - Total Regions",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats dc(RegionName)"
+			},
+			"type": "ds.chain"
+		},
+		"ds_ZZsOMeiB": {
+			"name": "SUMMARY - Sankey - Effective Cost by Service Name per Provider",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats sum(sumEffectiveCost) as EffectiveCost \n    by ProviderName, ServiceName \n| where EffectiveCost > 0"
+			},
+			"type": "ds.chain"
+		},
+		"ds_a9JwOHHG": {
+			"name": "global_currency",
+			"options": {
+				"enableSmartSources": true,
+				"query": "| `focus_base_search()`\n| dedup BillingCurrency\n| eval cur = BillingCurrency\n| table cur"
+			},
+			"type": "ds.search"
+		},
+		"ds_eR4ijEZE": {
+			"name": "FILTER - Dropdown - Billing Account Name",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| dedup BillingAccountName\n| table BillingAccountName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_eqi7mH0X": {
+			"name": "FILTER - Dropdown - Tag Keys",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag_keys`"
+			},
+			"type": "ds.chain"
+		},
+		"ds_gY4qFOMD": {
+			"name": "FILTER - Dropdown - Service Category",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| dedup ServiceCategory \n| table ServiceCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_kXoucBgg": {
+			"name": "SUMMARY - SingleValue - Total Effective Cost",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats sum(eval(round(sumEffectiveCost,2))) as EffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_obavAvZq": {
+			"name": "TREND - fixed Period- Column - Effective Cost Top 10 Resource",
+			"options": {
+				"query": "| `focus_base_search` \n| timechart sum(eval(round(sumEffectiveCost,2))) as EffectiveCost span=1d by ResourceId \n| addtotals fieldname=Total ",
+				"queryParameters": {
+					"earliest": "-30d@d",
+					"latest": "@d"
+				}
+			},
+			"type": "ds.search"
+		},
+		"ds_pciCswG4": {
+			"name": "SUMMARY - Donat - Regions by Name",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats sum(sumEffectiveCost) as EffectiveCost by RegionId RegionName ProviderName\n| table RegionName EffectiveCost\n| sort - EffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_qOKt7EqQ": {
+			"name": "FORCAST - fixed Period - Column - Prediction over month",
+			"options": {
+				"query": "| `focus_base_search` \n| timechart span=1mon sum(eval(round(sumEffectiveCost,2))) as EffectiveCost\n| predict EffectiveCost algorithm=LLT holdback=1",
+				"queryParameters": {
+					"earliest": "-4mon@mon",
+					"latest": "now"
+				}
+			},
+			"type": "ds.search"
+		},
+		"ds_sN98RtRb": {
+			"name": "SUMMARY - Map - Effective Cost by RegionId",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| stats sum(sumEffectiveCost) as EffectiveCost by RegionId RegionName ProviderName\n| lookup cloudregions region_id AS RegionId provider AS ProviderName OUTPUT city country lat lon provider\n| geostats latfield=lat longfield=lon sum(EffectiveCost) by RegionName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_tauTbTvN": {
+			"name": "ANALYZE - Table - ResourceId Tag",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| rex field=Tags max_match=0 \"(?:(?:\\\"{1,2}|')(?<tag_keys>[^\\\"':]+)(?:\\\"{1,2}|')\\s*:\\s*(?:\\\"{1,2}|')(?<tag_values>[^\\\"']*)(?:\\\"{1,2}|'))\" \n| eval has_tag = if(RunTags==\"n/a\", 0, 1) \n| eval tag_keys = if(isnull(tag_keys), \"n/a\", tag_keys) \n| eval tag_values = if(isnull(tag_values), \"n/a\", tag_values) \n| stats sum(eval(round(sumConsumedQuantity,4))) as ConsumedQuantity sum(eval(round(sumEffectiveCost,2))) as EffectiveCost values(has_tag) as has_tag values(tag_keys) as tag_keys values(tag_values) as tag_values values(_time) as _time by ConsumedUnit ResourceId ProviderName BillingAccountId SubAccountName ServiceCategory ServiceName BillingCurrency \n| addtotals row=true EffectiveCost \n| stats values(ProviderName) as \"Provider Name\" values(BillingAccountId) as \"Billing Account\" values(SubAccountName) as \"Sub Account\" values(ServiceCategory) as \"Service Category\" values(ServiceName) as \"Service\" values(has_tag) as has_tag values(tag_keys) as tag_keys values(tag_values) as tag_values values(BillingCurrency) as BillingCurrency values(ConsumedUnit) as \"Consumed Units\" values(ConsumedQuantity) as \"Consumed Quantity\" values(EffectiveCost) as \"Effective Cost\" sum(eval(round(Total,2))) as Total latest(_time) as _time by ResourceId \n| eval Total = tostring(Total,\"commas\").\" \".BillingCurrency \n| eval _tok = case(\"$tok_tag_filter$\"=\"*\", \"*\",\n    \"$tok_tag_filter$\"=\"1\", \"1\",\n    \"$tok_tag_filter$\"=\"0\", \"0\",\n    true(), \"*\") \n| where (_tok=\"*\" OR has_tag=_tok) \n| fields - has_tag _tok \n| rename ResourceId as \"Resource Id\" tag_keys as Tag tag_values as Values\n| eval \"Last Seen\" = strftime(_time, \"%Y-%m-%d\")\n| table \"Last Seen\" \"Resource Id\", \"Service Category\", \"Service\", Tag, Values, \"Consumed Units\", \"Consumed Quantity\", \"Effective Cost\", Total\n| sort - \"Last Seen\""
+			},
+			"type": "ds.chain"
+		},
+		"ds_tgeJ5HIg": {
+			"name": "ANALYZE - SingleValue - EffectiveCost with tags",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "`focus_tag`\n| stats sum(eval(round(sumEffectiveCost,2))) as Total by with_tag\n| fields Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_uwNsWRqI": {
+			"name": "SUMMARY - Bar - Sub Account Effective Cost per Service",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| chart sum(eval(round(sumEffectiveCost,2))) as EffectiveCost by SubAccountName ServiceName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_zmCak8sX": {
+			"name": "FILTER - Dropdown - Provider Name",
+			"options": {
+				"extend": "ds_BASEwithFILTER",
+				"query": "| dedup ProviderName \n| table ProviderName"
+			},
+			"type": "ds.chain"
+		}
+	},
+	"layout": {
+		"globalInputs": [
+			"input_global_trp",
+			"input_dHNPWfZE",
+			"input_abTU5yhh",
+			"input_6B0gTm7t",
+			"input_p2oqJ9xu",
+			"input_aZ7CjU0e",
+			"input_whROvuJW",
+			"input_R1oBE7KT",
+			"input_MDK4GtAn",
+			"input_Yw70NHFu",
+			"input_4HfwBlQu"
+		],
+		"layoutDefinitions": {
+			"layout_0xKjbElP": {
+				"options": {
+					"backgroundColor": "#171d21"
+				},
+				"structure": [
+					{
+						"item": "viz_XRScVO05",
+						"position": {
+							"h": 136,
+							"w": 1200,
+							"x": 0,
+							"y": 0
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_smfQC8YI",
+						"position": {
+							"h": 822,
+							"w": 1200,
+							"x": 0,
+							"y": 136
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_iriO0YIJ",
+						"position": {
+							"h": 216,
+							"w": 1200,
+							"x": 0,
+							"y": 958
+						},
+						"type": "block"
+					}
+				],
+				"type": "grid"
+			},
+			"layout_U0fvYT6G": {
+				"options": {
+					"backgroundColor": "#171d21"
+				},
+				"structure": [
+					{
+						"item": "viz_IkZz1Sha",
+						"position": {
+							"h": 144,
+							"w": 1200,
+							"x": 0,
+							"y": 0
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_4an4MbZ8",
+						"position": {
+							"h": 421,
+							"w": 600,
+							"x": 0,
+							"y": 144
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_UTTw3GRR",
+						"position": {
+							"h": 187,
+							"w": 300,
+							"x": 0,
+							"y": 565
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_aImTHcka",
+						"position": {
+							"h": 187,
+							"w": 300,
+							"x": 0,
+							"y": 752
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_OxWM5oPr",
+						"position": {
+							"h": 150,
+							"w": 1200,
+							"x": 0,
+							"y": 939
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_2i9GXUmx",
+						"position": {
+							"h": 633,
+							"w": 600,
+							"x": 0,
+							"y": 1089
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_VaZOEKkM",
+						"position": {
+							"h": 64,
+							"w": 1200,
+							"x": 0,
+							"y": 1722
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_6EWlWKFA",
+						"position": {
+							"h": 722,
+							"w": 600,
+							"x": 0,
+							"y": 1786
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_eJ4Itc2A",
+						"position": {
+							"h": 64,
+							"w": 1200,
+							"x": 0,
+							"y": 2508
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_qcUjdfyH",
+						"position": {
+							"h": 714,
+							"w": 600,
+							"x": 0,
+							"y": 2572
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_fD3ktPWz",
+						"position": {
+							"h": 64,
+							"w": 1200,
+							"x": 0,
+							"y": 3286
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_97zMLTQn",
+						"position": {
+							"h": 187,
+							"w": 300,
+							"x": 300,
+							"y": 565
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lNevDlJk",
+						"position": {
+							"h": 187,
+							"w": 300,
+							"x": 300,
+							"y": 752
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_QLIqCqQR",
+						"position": {
+							"h": 490,
+							"w": 600,
+							"x": 600,
+							"y": 449
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_RtmhHcEj",
+						"position": {
+							"h": 305,
+							"w": 171,
+							"x": 600,
+							"y": 144
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_wN4i5AtH",
+						"position": {
+							"h": 633,
+							"w": 600,
+							"x": 600,
+							"y": 1089
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_gyu1VThF",
+						"position": {
+							"h": 722,
+							"w": 600,
+							"x": 600,
+							"y": 1786
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_3mmNKfDZ",
+						"position": {
+							"h": 714,
+							"w": 600,
+							"x": 600,
+							"y": 2572
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_F6FLk3zm",
+						"position": {
+							"h": 305,
+							"w": 429,
+							"x": 771,
+							"y": 144
+						},
+						"type": "block"
+					}
+				],
+				"type": "grid"
+			},
+			"layout_oq5qmO0l": {
+				"options": {
+					"backgroundColor": "#171d21"
+				},
+				"structure": [
+					{
+						"item": "viz_4kz3byPf",
+						"position": {
+							"h": 139,
+							"w": 1200,
+							"x": 0,
+							"y": 0
+						},
+						"type": "block"
+					},
+					{
+						"item": "input_v60LIOzf",
+						"position": {
+							"h": 98,
+							"w": 126,
+							"x": 0,
+							"y": 139
+						},
+						"type": "input"
+					},
+					{
+						"item": "viz_cjZtWBzQ",
+						"position": {
+							"h": 355,
+							"w": 126,
+							"x": 0,
+							"y": 237
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_hO8FNgJg",
+						"position": {
+							"h": 529,
+							"w": 1200,
+							"x": 0,
+							"y": 592
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_hjtw3Uqg",
+						"position": {
+							"h": 154,
+							"w": 1200,
+							"x": 0,
+							"y": 1121
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_tCDurHDW",
+						"position": {
+							"h": 718,
+							"w": 1200,
+							"x": 0,
+							"y": 1275
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_AHOpzkNF",
+						"position": {
+							"h": 714,
+							"w": 1200,
+							"x": 0,
+							"y": 1993
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Gu12ilJC",
+						"position": {
+							"h": 128,
+							"w": 1200,
+							"x": 0,
+							"y": 2707
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_fdjxGYZw",
+						"position": {
+							"h": 453,
+							"w": 1074,
+							"x": 126,
+							"y": 139
+						},
+						"type": "block"
+					}
+				],
+				"type": "grid"
+			},
+			"layout_pdGoCQZ6": {
+				"structure": [
+					{
+						"item": "viz_Aac1g1lD",
+						"position": {
+							"h": 160,
+							"w": 1200,
+							"x": 0,
+							"y": 0
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_7ZN4HWZh",
+						"position": {
+							"h": 400,
+							"w": 308,
+							"x": 0,
+							"y": 160
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_CVwNNm9x",
+						"position": {
+							"h": 424,
+							"w": 1200,
+							"x": 0,
+							"y": 560
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Oj4QNw7n",
+						"position": {
+							"h": 135,
+							"w": 1200,
+							"x": 0,
+							"y": 984
+						},
+						"type": "block"
+					},
+					{
+						"item": "input_6dKyTw3b",
+						"position": {
+							"h": 103,
+							"w": 119,
+							"x": 0,
+							"y": 1119
+						},
+						"type": "input"
+					},
+					{
+						"item": "viz_3HfVnx8F",
+						"position": {
+							"h": 297,
+							"w": 119,
+							"x": 0,
+							"y": 1222
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_8bNJxhGx",
+						"position": {
+							"h": 173,
+							"w": 1200,
+							"x": 0,
+							"y": 1519
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_akBdqy7E",
+						"position": {
+							"h": 400,
+							"w": 481,
+							"x": 119,
+							"y": 1119
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_vIbUHiWB",
+						"position": {
+							"h": 400,
+							"w": 292,
+							"x": 308,
+							"y": 160
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_7hlUZQQu",
+						"position": {
+							"h": 200,
+							"w": 251,
+							"x": 600,
+							"y": 360
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lUdrMGz2",
+						"position": {
+							"h": 200,
+							"w": 251,
+							"x": 600,
+							"y": 160
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_sk77sK7o",
+						"position": {
+							"h": 400,
+							"w": 600,
+							"x": 600,
+							"y": 1119
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_tzGK71v9",
+						"position": {
+							"h": 200,
+							"w": 349,
+							"x": 851,
+							"y": 160
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lFHPJRWp",
+						"position": {
+							"h": 200,
+							"w": 349,
+							"x": 851,
+							"y": 360
+						},
+						"type": "block"
+					}
+				],
+				"type": "grid"
+			}
+		},
+		"options": {},
+		"tabs": {
+			"items": [
+				{
+					"label": "SUMMARY",
+					"layoutId": "layout_U0fvYT6G"
+				},
+				{
+					"label": "ANALYZE",
+					"layoutId": "layout_pdGoCQZ6"
+				},
+				{
+					"label": "TREND",
+					"layoutId": "layout_oq5qmO0l"
+				},
+				{
+					"label": "FORCAST",
+					"layoutId": "layout_0xKjbElP"
+				}
+			]
+		}
+	},
+	"applicationProperties": {
+		"collapseNavigation": false,
+		"hideEdit": false,
+		"hideExport": true,
+		"hideOpenInSearch": false,
+		"hideViewModeActionMenu": true
+	}
+}
+    ]]></definition>
+</dashboard>

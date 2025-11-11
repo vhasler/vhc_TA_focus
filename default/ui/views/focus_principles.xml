@@ -1,0 +1,273 @@
+<dashboard version="2" theme="dark">
+    <label>Principles</label>
+    <description>FinOps Principles act as a north star, guiding the activities of our FinOps practice and should be part of the company&#39;s DNA.</description>
+    <definition><![CDATA[
+{
+	"visualizations": {
+		"viz_mK3Pm8kN": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Principles/Principles.svg"
+			}
+		},
+		"viz_Dg9ZGIHj": {
+			"type": "splunk.image",
+			"options": {
+				"src": "/static/app/vhc_TA_focus/Principles/PrinciplesDNS.svg"
+			}
+		},
+		"viz_2ZUeuk9Q": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Principles/Collaborate.svg"
+			}
+		},
+		"viz_7eTMREkv": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Principles/Ownership.svg"
+			}
+		},
+		"viz_xT2VhEZn": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Principles/CentralizedTeam.svg"
+			}
+		},
+		"viz_ijLa71wQ": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Principles/BusinessValue.svg"
+			}
+		},
+		"viz_SqTyGMwC": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Principles/Reports.svg"
+			}
+		},
+		"viz_qVnbgZZF": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Principles/VariableCost.svg"
+			}
+		},
+		"viz_W8WlYLrI": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/FinOpsFoundation/FinOps_Foundation.svg"
+			},
+			"eventHandlers": [
+				{
+					"type": "drilldown.linkToDashboard",
+					"options": {
+						"app": "vhc_TA_focus",
+						"dashboard": "finops_framework"
+					}
+				}
+			]
+		},
+		"viz_JexDL6ys": {
+			"type": "splunk.image",
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Persona-Graphic.svg"
+			}
+		},
+		"viz_itwA1wKK": {
+			"type": "splunk.rectangle",
+			"options": {
+				"fillColor": "#ffffff",
+				"strokeWidth": 0,
+				"rx": 10
+			}
+		},
+		"viz_1tfLXzxg": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "# Cultural Evolution: Embedding FinOps Principles into Our DNA",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"fontSize": "large"
+			}
+		}
+	},
+	"dataSources": {},
+	"defaults": {
+		"dataSources": {
+			"ds.search": {
+				"options": {
+					"queryParameters": {
+						"latest": "$global_time.latest$",
+						"earliest": "$global_time.earliest$"
+					}
+				}
+			}
+		}
+	},
+	"inputs": {},
+	"layout": {
+		"options": {},
+		"globalInputs": [],
+		"tabs": {
+			"items": [
+				{
+					"layoutId": "layout_1",
+					"label": "New tab"
+				}
+			]
+		},
+		"layoutDefinitions": {
+			"layout_1": {
+				"type": "absolute",
+				"structure": [
+					{
+						"item": "viz_Dg9ZGIHj",
+						"type": "block",
+						"position": {
+							"x": 580,
+							"y": 100,
+							"w": 1000,
+							"h": 900
+						}
+					},
+					{
+						"item": "viz_itwA1wKK",
+						"type": "block",
+						"position": {
+							"x": 110,
+							"y": 20,
+							"w": 1920,
+							"h": 120
+						}
+					},
+					{
+						"item": "viz_mK3Pm8kN",
+						"type": "block",
+						"position": {
+							"x": 160,
+							"y": 330,
+							"w": 380,
+							"h": 300
+						}
+					},
+					{
+						"item": "viz_2ZUeuk9Q",
+						"type": "block",
+						"position": {
+							"x": 840,
+							"y": 350,
+							"w": 70,
+							"h": 70
+						}
+					},
+					{
+						"item": "viz_7eTMREkv",
+						"type": "block",
+						"position": {
+							"x": 840,
+							"y": 520,
+							"w": 70,
+							"h": 70
+						}
+					},
+					{
+						"item": "viz_xT2VhEZn",
+						"type": "block",
+						"position": {
+							"x": 840,
+							"y": 720,
+							"w": 70,
+							"h": 70
+						}
+					},
+					{
+						"item": "viz_ijLa71wQ",
+						"type": "block",
+						"position": {
+							"x": 1190,
+							"y": 350,
+							"w": 70,
+							"h": 70
+						}
+					},
+					{
+						"item": "viz_SqTyGMwC",
+						"type": "block",
+						"position": {
+							"x": 1190,
+							"y": 520,
+							"w": 70,
+							"h": 70
+						}
+					},
+					{
+						"item": "viz_qVnbgZZF",
+						"type": "block",
+						"position": {
+							"x": 1190,
+							"y": 720,
+							"w": 70,
+							"h": 70
+						}
+					},
+					{
+						"item": "viz_W8WlYLrI",
+						"type": "block",
+						"position": {
+							"x": 1780,
+							"y": 40,
+							"w": 230,
+							"h": 70
+						}
+					},
+					{
+						"item": "viz_JexDL6ys",
+						"type": "block",
+						"position": {
+							"x": 1520,
+							"y": 330,
+							"w": 510,
+							"h": 300
+						}
+					},
+					{
+						"item": "viz_1tfLXzxg",
+						"type": "block",
+						"position": {
+							"x": 130,
+							"y": 40,
+							"w": 930,
+							"h": 50
+						}
+					}
+				],
+				"options": {
+					"width": 2150,
+					"height": 1000,
+					"display": "fit-to-width",
+					"backgroundColor": "transparent"
+				}
+			}
+		}
+	},
+	"description": "FinOps Principles act as a north star, guiding the activities of our FinOps practice and should be part of the company's DNA.",
+	"title": "FinOps Principles"
+}
+    ]]></definition>
+    <meta type="hiddenElements"><![CDATA[
+{
+	"hideEdit": false,
+	"hideOpenInSearch": false,
+	"hideExport": false
+}
+    ]]></meta>
+</dashboard>

@@ -1,0 +1,20 @@
+Proprietary License
+
+This software application is proprietary and confidential. 
+It is licensed only for use by authorized clients, partners, or employees.
+
+You may:
+- Use this software internally within your organization.
+- Evaluate the app for potential use or proof of concept.
+- Reference its structure and outputs for internal training or FinOps enablement.
+
+You may NOT:
+- Modify, distribute, sublicense, or commercialize this software without explicit written permission.
+- Use this software in a commercial product or service offering without prior agreement.
+- Publish, disclose, or share this software publicly, including uploading to public repositories or marketplaces.
+
+This app includes references to the FinOps Framework developed by the FinOps Foundation (https://www.finops.org).
+All trademarks and materials from the FinOps Foundation are the property of their respective owners.
+
+NO WARRANTY:
+This software is provided "as is", without warranty of any kind, express or implied.

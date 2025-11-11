@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<nav search_view="search" color="transparent">
+
+  <collection label="About FOCUS">
+      <view name="focus_framework"/>
+      <view name="focus_principles"/>
+      <view name="focus_capabilities_domains"/>
+      <view name="focus_capabilities_personas_cases"/>
+      <view name="focus_example_usecases"/>
+      <collection label="Legacy Dashboard(s)">
+        <view name="legacy_mgmt_dashboard"/>
+        <view name="legacy_analyze_dashboard"/>
+        <view name="legacy_report_dashboard"/>
+      </collection>
+  </collection>
+
+  <collection label="Dashboard">
+      <view name="unified_dashboard" default="true"/>
+  </collection>
+  
+  <collection label="Splunk">
+      <view name="search" />
+      <view name="datasets" />
+      <view name="reports" />
+      <view name="alerts" />
+      <view name="dashboards" />
+  </collection>
+
+</nav>

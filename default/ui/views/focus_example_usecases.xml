@@ -1,0 +1,7869 @@
+<dashboard version="2" theme="dark">
+    <label>FOCUS Example Usecase(s)</label>
+    <description>This view showcases example use cases with limited filtering options. It has been tested with sample data, so the underlying searches may not be fully accurate or valid.</description>
+    <definition><![CDATA[
+{
+	"title": "FOCUS Example Usecase(s)",
+	"description": "This view showcases example use cases with limited filtering options. It has been tested with sample data, so the underlying searches may not be fully accurate or valid.",
+	"inputs": {
+		"input_global_trp": {
+			"options": {
+				"defaultValue": "@mon,now",
+				"token": "global_time"
+			},
+			"title": "Global Time Range",
+			"type": "input.timerange"
+		},
+		"input_u6FJXHuo": {
+			"dataSources": {
+				"primary": "ds_J4evhrdt"
+			},
+			"options": {
+				"backgroundColor": "#000000",
+				"defaultValue": "*",
+				"items": [
+					{
+						"label": "All",
+						"value": "*"
+					}
+				],
+				"token": "ProviderName"
+			},
+			"title": "Provider Name",
+			"type": "input.dropdown"
+		}
+	},
+	"defaults": {
+		"dataSources": {
+			"ds.search": {
+				"options": {
+					"queryParameters": {
+						"earliest": "$global_time.earliest$",
+						"latest": "$global_time.latest$"
+					}
+				}
+			}
+		}
+	},
+	"visualizations": {
+		"viz_01SUTREb": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_0GudEw8Q": {
+			"context": {
+				"TotalBilledCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalBilledCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_yT4i6GXs"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalBilledCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalBilledCost\") | formatByType(TotalBilledCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalBilledCost\") | rangeValue(TotalBilledCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_0hhk3sJr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_1XpiMv2U": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Analyze costs by service name\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n### Context\n**Analyzing service-level spending trends** over a time period can expose expected and unexpected growth in the consumption of a cloud service, and **is a good way **for the FinOps team **to prioritize usage and rate optimization conversations** with product, engineering, and finance leaders within the organization.\n### FOCUS Columns\n\n- Billed Cost \n- Billing Period Start \n- Provider \n- Service Name \n- Sub Account ID \n- Sub Account Name \n- Effective Cost"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_2VmNIjcT": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_31otYePr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_4FfAzTPt": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_4OBTRO9Z": {
+			"context": {
+				"TotalBilledCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalBilledCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_HOisVZBX"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalBilledCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalBilledCost\") | formatByType(TotalBilledCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalBilledCost\") | rangeValue(TotalBilledCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_4UBUKR4G": {
+			"context": {
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"dataSources": {
+				"primary": "ds_wdFdquhF"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalEffectiveCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalEffectiveCost\") | rangeValue(TotalEffectiveCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_4X6ZaAO9": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_4qOshsCL": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_4rRSgwWH": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_56aRNPpE": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_59meor9j": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report commitment discount purchases\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization` `#Planning & Estimation`\n### Context\n**Tracking and reconciling** commitment-based discount purchases across providers is a **key to success for FinOps**.\n### FOCUS Columns\n\n- Provider \n- Billing Account ID \n- Commitment Discount ID \n- Commitment Discount Type \n- Charge Frequency \n- Billed Cost \n- Charge Period Start \n- Charge Period End \n- Charge Category \n- Commitment Discount Unit \n- Commitment Discount Quantity"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_6Kyharh8": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report recurring charges for commitment-based discounts over a period\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n### Context\nAs a Finance person, I want to understand the recurring costs of commitment based discounts over a period of time **to improve forecasting**.\n### FOCUS Columns\n\n- Charge Frequency \n- Billing Period Start \n- Billed Cost \n- Commitment Discount ID \n- Commitment Discount Name"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_6uYu5wmf": {
+			"dataSources": {
+				"primary": "ds_QLm6ljl9"
+			},
+			"options": {
+				"showDonutHole": true,
+				"backgroundColor": "#192630"
+			},
+			"title": "By Service Category",
+			"type": "splunk.pie"
+		},
+		"viz_7G7DSqDo": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_80uK34s1": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_84qNBYRB": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_yzDHojCx"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_8GXsmgjV": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Analyze capacity reservations on compute costs\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload`\n### Context\nCompute costs are often the highest spend area in a cloud bill, it may be useful for FinOps practitioners and Engineers to understand the volume of costs that are coming from reserved commitments either used or unused compared to the amount of compute costs that have no reservations applied. Capacity reservations can be very useful for Engineering to help them ensure capacity is available for their services when it is needed, **however when reducing usage and rightsizing workloads capacity reservations need to be adjusted at the same time**.\n### FOCUS Columns\n\n- Charge Period Start \n- Charge Period End \n- Billed Cost \n- Effective Cost \n- Service Category \n- Provider \n- Billing Account ID"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_8QaJCJxt": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_8X6V3jmT": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_8eaUFNFg": {
+			"context": {
+				"majorColorEditorConfig": [
+					{
+						"to": 20,
+						"value": "#D41F1F"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#D94E17"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#669922"
+					},
+					{
+						"from": 80,
+						"value": "#118832"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_aUkjWsOF"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"majorColor": "> majorValue | rangeValue(majorColorEditorConfig)",
+				"numberPrecision": 2,
+				"sparklineDisplay": "off",
+				"trendDisplay": "off",
+				"unit": "%"
+			},
+			"type": "splunk.singlevalue",
+			"title": "Tag coverage",
+			"description": ""
+		},
+		"viz_93l0X9sj": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_9KvrYjCu": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report effective cost of compute\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization` `#Planning & Estimation`\n### Context\nEngineers and Engineering Managers want to **reduce their billed cost for Compute** from a specific provider. In order to do that, they **need to know the current rate of commitment-based discounts** (without contracted discounts) per type of commitment. This helps to strategize further purchases.\n### FOCUS Columns\n\n- Commitment Discount Type \n- Service Name \n- Provider \n- Sub Account ID \n- Sub Account Name \n- Billing Period Start \n- Effective Cost \n- Service Category \n- Billing Period End"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_9gdVPJ2r": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_9lFBuian": {
+			"context": {
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_UdK3QLrI"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalEffectiveCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalEffectiveCost\") | rangeValue(TotalEffectiveCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_9lGirQVR": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_9mNJqSq0": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_A2MuFNtT": {
+			"context": {
+				"TotalBilledCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalBilledCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"dataSources": {
+				"primary": "ds_fnx58zkT"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalBilledCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalBilledCost\") | formatByType(TotalBilledCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalBilledCost\") | rangeValue(TotalBilledCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_AawKvOf4": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_AxvHvxKm": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_B5ILidJx": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Determine Effective Savings Rate by Service\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization` `#Planning & Estimation`\n### Context\nThis use cases **focuses on Effective Savings Rate (ESR) per Service**.\n\nThe Effective Savings Rate is a KPI to track the efficiency of using commitment-based discounts. The KPI calculation is (Contracted Cost – Effective Cost) / Contracted Cost)\n\n### FOCUS Columns\n\n- Provider \n- Contracted Unit Price \n- Pricing Quantity \n- Effective Cost \n- Billing Period Start \n- List Cost"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_B7n7zfQR": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_B9lnSQX8": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_BjpzvGEN": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_CmL8kJND": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_DMbqbryM": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_E1o2w3YL": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_EDI94SWr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_EL66FCIM": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_EiLaC83G": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_3rdJTQvt"
+			},
+			"options": {
+				"showDonutHole": true,
+				"backgroundColor": "#192630"
+			},
+			"type": "splunk.pie"
+		},
+		"viz_El0IWW68": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Analyze service costs month over month\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n### Context\nAnalyzing service-level spending trends over a time period **can expose expected and unexpected growth in the consumption** of various services across all providers and is a good way for the FinOps team to prioritize usage and rate optimization conversations with product, engineering and finance leaders within the organization.\n### FOCUS Columns\n\n- Charge Period Start \n- Provider \n- Service Name \n- Effective Cost"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_FLBy5Ttw": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_GlVXsYfe": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_H5Ss5rLd": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report costs by service category\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization` `#Planning & Estimation`\n### Context\nUnderstanding costs across providers, billing periods, and service categories (Analytics, Compute, Database, Storage, etc.) provides valuable insight into total costs.\n### FOCUS Columns\n\n- Provider \n- Billing Currency \n- Billing Period Start \n- Service Category \n- Billed Cost \n- Billing Period End"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_HkJzyG8f": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_njkjlc6w"
+			},
+			"options": {
+				"xAxisLabelRotation": -45,
+				"backgroundColor": "#192630"
+			},
+			"type": "splunk.column",
+			"containerOptions": {},
+			"showProgressBar": false,
+			"showLastUpdated": false
+		},
+		"viz_HkapSRAL": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_I1xDbEBl": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_ICejFjqd": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_yrY5Lx8F"
+			},
+			"options": {
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_IgqUX4Go": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Identify which provider versions your datasets have been generated with\n\n`#Allocation` `#Reporting & Analytics`\n\n### Context\nAs data arrives into the FOCUS datastore a FinOps Practitioner may need to track updates to the datasets as providers update their FOCUS conformance. Reporting which provider versions your data has been generated to enables a Practitioner to stay informed and identify when they may need to check their FOCUS reports have not been impacted by new provider versions.\n### FOCUS Columns\n\n- Charge Period Start \n- Charge Period End \n- Provider \n- Provider Version"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_IrUXxHkr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_J2QbCfmK": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_J8G3c2uv": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_JQsKqm6c": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_JfhwOChm": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_JgClLUUZ": {
+			"context": {
+				"TotalBilledCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalBilledCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"dataSources": {
+				"primary": "ds_AO0CCqsg"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalBilledCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalBilledCost\") | formatByType(TotalBilledCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalBilledCost\") | rangeValue(TotalBilledCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_KG9n9XMu": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_Ks3HD2Ff": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_YAvFnFcJ"
+			},
+			"options": {
+				"headerVisibility": "fixed",
+				"columnFormat": {
+					"TotalListCost": {
+						"data": "> table | seriesByName(\"TotalListCost\") | formatByType(TotalListCostColumnFormatEditorConfig)",
+						"align": "auto",
+						"headerAlign": "auto",
+						"textOverflow": "break-word",
+						"rowColors": "> table | seriesByName(\"TotalListCost\") | rangeValue(TotalListCostRowColorsEditorConfig)"
+					},
+					"TotalEffectiveCost": {
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"align": "auto",
+						"headerAlign": "auto",
+						"textOverflow": "break-word",
+						"rowColors": "> table | seriesByName(\"TotalEffectiveCost\") | rangeValue(TotalEffectiveCostRowColorsEditorConfig)"
+					}
+				},
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table",
+			"context": {
+				"TotalListCostColumnFormatEditorConfig": {
+					"number": {
+						"thousandSeparated": false,
+						"unitPosition": "after",
+						"precision": 4
+					}
+				},
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"thousandSeparated": false,
+						"unitPosition": "after",
+						"precision": 4
+					}
+				},
+				"TotalListCostRowColorsEditorConfig": [
+					{
+						"value": "#118832",
+						"to": 20
+					},
+					{
+						"value": "#669922",
+						"from": 20,
+						"to": 40
+					},
+					{
+						"value": "#CBA700",
+						"from": 40,
+						"to": 60
+					},
+					{
+						"value": "#D94E17",
+						"from": 60,
+						"to": 80
+					},
+					{
+						"value": "#D41F1F",
+						"from": 80
+					}
+				],
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"value": "#118832",
+						"to": 20
+					},
+					{
+						"value": "#669922",
+						"from": 20,
+						"to": 40
+					},
+					{
+						"value": "#CBA700",
+						"from": 40,
+						"to": 60
+					},
+					{
+						"value": "#D94E17",
+						"from": 60,
+						"to": 80
+					},
+					{
+						"value": "#D41F1F",
+						"from": 80
+					}
+				]
+			}
+		},
+		"viz_KvtLp7SE": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Identify unused capacity reservations\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n## Context\nIdentify all data in a time period where CapacityReservationStatus is **‘unused’** thus identifying capacity reservations that aren’t used and **enabling the Practitioner to take action on either cancelling the reservation** (if able), working with other personas on a workload that could use the reservation, or performing informed ignore (knowing it is there but ignoring it because there is nothing one can do).\n### FOCUS Columns\n\n- Charge Period Start \n- Charge Period End \n- Provider \n- Billing Account ID \n- Capacity Reservation ID \n- Capacity Reservation Status \n- Billed Cost \n- Effective Cost"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_Kwmf22tA": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_KzyyOUSj": {
+			"context": {
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_zdp9lgRW"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalEffectiveCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalEffectiveCost\") | rangeValue(TotalEffectiveCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_LQ2JUKcW": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report spending across billing periods for a provider by service category\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n### Context\nUnderstanding costs across providers, billing periods, billing accounts, and service categories (Analytics, Compute, Database, Storage, etc.) provides valuable insight into total costs and can be used by Procurement to focus negotiations for specific providers with details on the billing accounts that are driving costs. **To focus negotiations toward highest costing items**.\n### FOCUS Columns\n\n- Provider \n- Billing Account ID \n- Billing Account Name \n- Billing Currency \n- Billed Cost \n- Billing Period Start \n- Service Category \n- Service Name"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_NDx0H1lW": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report refunds in a billing period\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization` `#Planning & Estimation`\n### Context\nFinOps Practitioners need to identify all refunds within a billing period.\n### FOCUS Columns\n\n- Provider \n- Billing Account ID \n- Service Category \n- Billed Cost \n- Billing Period Start \n- Billing Period End \n- Charge Class \n- Charge Category \n- Service Name\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_NlrerBmb": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_O1a8YNTV": {
+			"context": {
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"dataSources": {
+				"primary": "ds_wz8w0q4N"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalEffectiveCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalEffectiveCost\") | rangeValue(TotalEffectiveCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_OOOwiySk": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization\n\n### Planning & Estimation"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_OZgEI5bs": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_ObGxAkH6": {
+			"context": {
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_8mFavfsn"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalEffectiveCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalEffectiveCost\") | rangeValue(TotalEffectiveCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table",
+			"title": "Report application cost month over month"
+		},
+		"viz_Or1bi3lM": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_OtLNoOTY": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_PQDvDsKq": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_PTkrd48R": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_PWIy5E1G": {
+			"dataSources": {
+				"primary": "ds_VpkoAL1R"
+			},
+			"options": {
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_PlpoAMHR": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Analyze the different metered costs for a particular SKU\n`#Allocation` `#Reporting & Analytics` `#Forecasting` `#Workload Optimization`\n### Context\nUnderstanding the individual metered costs **of a particular SKU can help assist FinOps-Practitioners understand the cost breakdown of usage** of a select cloud resource. Especially in cases where a SKU has a few component charges like (Usage hours, Throughput, API requests, etc)\n### FOCUS Columns\n\n- Provider \n- SKU ID \n- SKU Price ID \n- Charge Period Start \n- Charge Period End\n- Pricing Unit \n- List Unit Price \n- List Cost \n- Pricing Quantity  \n- Effective Cost "
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_Q986T0Kl": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Analyze tag coverage\n`#Allocation` `#Reporting & Analytics`\n### Context\nAnalyzing the amount of costs for a provider that have been tagged with a specific tag can enable the FinOps practitioner to check the amount of costs being allocated via tags.\n### FOCUS Columns\n- Charge Period Start \n- Charge Period End \n- Tags \n- Effective Cost \n- Provider"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_RANyjoiL": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_SCY3PNvL": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_SL1kzcF5": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_SLWGgBxQ": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_SU6opRpY": {
+			"containerOptions": {
+				"visibility": {}
+			},
+			"context": {
+				"TotalBilledCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalBilledCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_qLyntruR"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalBilledCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalBilledCost\") | formatByType(TotalBilledCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalBilledCost\") | rangeValue(TotalBilledCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_TmjFXJMf": {
+			"context": {
+				"TotalBilledCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalBilledCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				],
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_8RbrxgxJ"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalBilledCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalBilledCost\") | formatByType(TotalBilledCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalBilledCost\") | rangeValue(TotalBilledCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					},
+					"TotalEffectiveCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalEffectiveCost\") | rangeValue(TotalEffectiveCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_TnTftrdM": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_UaTrPmQE": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_VFlbUWSH": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_VGbtCnva": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_VN0xT05p": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report refunds by subaccount within a billing period\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n### Context\nUse FOCUS data to identify refunds across multiple providers, billing accounts, and subaccounts.\n### FOCUS Columns\n\n- Provider \n- Billing Account ID \n- Service Category \n- Billed Cost \n- Billing Period Start \n- Sub Account ID \n- Sub Account Name \n- Charge Category\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_VQlowZ5v": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_WukMx81P": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_XPSv6SMx": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_YJYII3TO": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_YXWUWwrU": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_YxkUKRNw": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Analyze costs of components of a resource\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization` `#Planning & Estimation`\n### Context\nUsing FOCUS data, an Engineer can deep dive on cost details for a single resource.\n### FOCUS Columns\n\n- Resource ID \n- Resource Name \n- Charge Description \n- SKU ID \n- Effective Cost \n- Charge Period Start \n- Charge Period End"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_ZEWOoaJ0": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Analyze service costs by region\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n### Context\nAnalyzing Service level spending trends over a time period **can expose expected and unexpected growth in the consumption** of various services, **by region**, across all providers and is a good way for the FinOps team to prioritize usage and rate optimization conversations with product, engineering and finance leaders within the organization.\n### FOCUS Columns\n\n- Effective Cost \n- Billing Period Start \n- Provider \n- Region ID \n- Service Name"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_ZnnSY2f7": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_b15MXa9d": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_bD9c8kLX": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_br1jy1v0": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_bx3r5ckl": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_50JCI5Ie"
+			},
+			"options": {
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_c6YxyyHT": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_cDVaF0Fw": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_cRJBpf0M": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_cofKRuPC": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_dSxn65Jw": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report costs by service category and subcategory\n`#Allocation` `#Reporting & Analytics` `#Forecasting` `#Workload Optimization`\n### Context\nUnderstanding costs across providers, billing periods, and service categories (Analytics, Compute, Database, Storage, etc.)  and service subcategories (Virtual Machines, Relational Databases, Content Delivery, etc) **provides valuable insight into total costs**.\n### FOCUS Columns\n\n- Billing Period Start \n- Billing Period End \n- Provider \n- Billing Currency \n- Service Category \n- Service Subcategory *\n- Billed Cost"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_dkQUGhou": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_e9vnwnKy": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_eD99ax44": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_edD1S8oV": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_f8omzPjM": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_fUtTA06d": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_SOkCeoDE"
+			},
+			"title": "Column - Report application cost month over month",
+			"type": "splunk.column",
+			"containerOptions": {},
+			"showProgressBar": false,
+			"showLastUpdated": false,
+			"options": {
+				"backgroundColor": "#192630",
+				"stackMode": "stacked"
+			}
+		},
+		"viz_fimE84cz": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_gyAQ9SkW": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_h8SCGsmz": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_h8jE6XIG": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_h9sq2dnX": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization\n\n### Planning & Estimation"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_hWJQbRMe": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_hfWoLP4Y": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_hlqLE2Vv": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_i0B2QGYD": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_iAH2qtdO": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_imxnLx8c": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ixIPHK0r": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report service costs by providers subaccount\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n### Context\nOrganizations wants to negotiate private pricing for a particular workload, a subaccount that carries specialized workloads, or their entire footprint. The cost metric used must **amortize up-front and recurring fees to get an accurate view of the effective cost**.\n### FOCUS Columns\n\n- Provider \n- Service Name \n- Sub Account ID \n- Charge Period Start \n- Effective Cost"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_jeISZ2mR": {
+			"context": {
+				"TotalBilledCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalBilledCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#D41F1F"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#D94E17"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#669922"
+					},
+					{
+						"from": 80,
+						"value": "#118832"
+					}
+				],
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#D41F1F"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#D94E17"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#669922"
+					},
+					{
+						"from": 80,
+						"value": "#118832"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_eE9nmwJi"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalBilledCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalBilledCost\") | formatByType(TotalBilledCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName('TotalBilledCost') | rangeValue(TotalBilledCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					},
+					"TotalEffectiveCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName('TotalEffectiveCost') | rangeValue(TotalEffectiveCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_jkYOz2Vi": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_k4Yj6sCL": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_kHcnE9VW": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_kyusGzDY": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_kz2Dmc2q": {
+			"context": {
+				"TotalBilledCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalBilledCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_n6LtddhB"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalBilledCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalBilledCost\") | formatByType(TotalBilledCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalBilledCost\") | rangeValue(TotalBilledCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_lDTH5zpX": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_hl67qYgO"
+			},
+			"options": {
+				"overlayFields": [
+					"TotalBilledCost"
+				],
+				"backgroundColor": "#192630"
+			},
+			"type": "splunk.column",
+			"containerOptions": {},
+			"showProgressBar": false,
+			"showLastUpdated": false
+		},
+		"viz_lKvTcO3B": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_lmoZe40k": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_mQ6b6uKu": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_nA3mfwMQ": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_oYgmhf36": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization\n\n### Planning & Estimation"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_qDPfw3ON": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization\n\n### Planning & Estimation"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_qaRl2NF3": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization\n\n### Planning & Estimation"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_qu32nurV": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#fbf4ff",
+				"fontColor": "#000000",
+				"fontFamily": "Helvetica",
+				"markdown": "# Report application (tag:application) cost month over month\n`#Allocation`  `#Reporting & Analytics` `#Forecasting`  `#Workload Optimization` `#Architecting for Cloud`  `#Onboarding Workload` `#Anomaly Management` `#Rate Optimization`\n### Context\nAs an application owner or engineering team I want to track the month over month costs of my application.\n### FOCUS Columns\n\n- Billing Period Start"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_rfUFSedC": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_sJUDAPzU": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_seTsoriv": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_tv064Byu": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_Xp8oEsQD"
+			},
+			"options": {
+				"collapseLabel": "ohter",
+				"showDonutHole": true,
+				"backgroundColor": "#192630"
+			},
+			"title": "By Region",
+			"type": "splunk.pie"
+		},
+		"viz_tv2ElmGu": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_uOhKuK3y": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_v3eh8nBx": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_vmLHdqRw": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e4f2f7",
+				"fontColor": "#0080af",
+				"fontFamily": "Helvetica",
+				"markdown": "# Capabilities\n\n### Allocation\n\n### Reporting & Analytics\n\n### Forecasting\n\n### Workload Optimization\n\n### Architecting for Cloud\n\n### Onboarding Workload\n\n### Anomaly Management\n\n### Rate Optimization\n\n### Planning & Estimation"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_wJGasQjA": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_wY3drxNb": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_wpPyZZhp": {
+			"context": {
+				"majorColorEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_lS0IkD6t"
+			},
+			"options": {
+				"majorColor": "> majorValue | rangeValue(majorColorEditorConfig)",
+				"backgroundColor": "#192630",
+				"numberPrecision": 2,
+				"unitPosition": "before"
+			},
+			"type": "splunk.singlevalue",
+			"title": "Refunds"
+		},
+		"viz_ws2WVaLZ": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_xQyRrID8": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_xk2c2axf": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_NolQgnb3"
+			},
+			"options": {
+				"overlayFields": [
+					"Total"
+				],
+				"backgroundColor": "#192630",
+				"stackMode": "stacked",
+				"dataValuesDisplay": "all"
+			},
+			"type": "splunk.column"
+		},
+		"viz_xv0Mg31r": {
+			"context": {
+				"TotalEffectiveCostColumnFormatEditorConfig": {
+					"number": {
+						"precision": 4,
+						"thousandSeparated": false,
+						"unitPosition": "after"
+					}
+				},
+				"TotalEffectiveCostRowColorsEditorConfig": [
+					{
+						"to": 20,
+						"value": "#118832"
+					},
+					{
+						"from": 20,
+						"to": 40,
+						"value": "#669922"
+					},
+					{
+						"from": 40,
+						"to": 60,
+						"value": "#CBA700"
+					},
+					{
+						"from": 60,
+						"to": 80,
+						"value": "#D94E17"
+					},
+					{
+						"from": 80,
+						"value": "#D41F1F"
+					}
+				]
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"dataSources": {
+				"primary": "ds_AOIyDGLX"
+			},
+			"options": {
+				"columnFormat": {
+					"TotalEffectiveCost": {
+						"align": "auto",
+						"data": "> table | seriesByName(\"TotalEffectiveCost\") | formatByType(TotalEffectiveCostColumnFormatEditorConfig)",
+						"headerAlign": "auto",
+						"rowColors": "> table | seriesByName(\"TotalEffectiveCost\") | rangeValue(TotalEffectiveCostRowColorsEditorConfig)",
+						"textOverflow": "break-word"
+					}
+				},
+				"headerVisibility": "fixed",
+				"backgroundColor": "#192630",
+				"tableFormat": {
+					"rowBackgroundColors": "> table | seriesByIndex(0) | pick(tableAltRowBackgroundColorsByBackgroundColor)",
+					"headerBackgroundColor": "> backgroundColor | setColorChannel(tableHeaderBackgroundColorConfig)",
+					"rowColors": "> rowBackgroundColors | maxContrast(tableRowColorMaxContrast)",
+					"headerColor": "> headerBackgroundColor | maxContrast(tableRowColorMaxContrast)"
+				}
+			},
+			"type": "splunk.table"
+		},
+		"viz_znDowidr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_zzhkKOk3": {
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"options": {
+				"backgroundColor": "#e5f9f4",
+				"fontColor": "#004f3b",
+				"fontFamily": "Helvetica",
+				"markdown": "# Personas\n\n### FinOps-Practitioner\n\n### Engineering\n\n### Finance\n\n### Procurement\n\n### Product\n\n\n\n"
+			},
+			"type": "splunk.markdown"
+		},
+		"viz_695s91cK": {
+			"type": "splunk.column",
+			"options": {
+				"overlayFields": [
+					"Goal"
+				],
+				"lineWidth": 1.5,
+				"xAxisLabelRotation": -45,
+				"backgroundColor": "#192630",
+				"yAxisTitleText": "%",
+				"dataValuesDisplay": "all"
+			},
+			"dataSources": {
+				"primary": "ds_5GCpDkN0"
+			},
+			"cornerRadius": [
+				10,
+				10,
+				10,
+				10
+			],
+			"title": "Tag coverage by Service Category",
+			"description": ""
+		},
+		"viz_4ujhxIq7": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_hWguFbFr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_WbFgHsk0": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ZGtdE0Xr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_3J0WoI4P": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_7LV67fyO": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_2IhfR3QP": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_8PNIeMMF": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_KqL8zAnZ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_unNEC3NZ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_9kOVWLm2": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_S4MZ8fNS": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ahASQ5xo": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_fEwtxaOz": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_XejdOMsM": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_V2lQZ1Ko": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_pisawx9F": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_RCg9FHkc": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_at4w5ACz": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_nxoba3Vr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_zIYU4kN0": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_rTFK6dqs": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_fefjX0UM": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_PbY573Al": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_9YlMrQgN": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_hvTLCN2E": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_IbuJRRJr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_WWcKMmjm": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_PHJ7B8wL": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_fTCJiQbz": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_FKLvYKTZ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_bU91dUNF": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_1tkmvTlX": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_fCUDhi7Y": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_uc5fDskg": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_YeyXNHEr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_qeuGZB4F": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_PuoazQId": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_46PTpvFJ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_EJZmGUfd": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_UcuuEiGk": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_mGs3wowa": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_8gM8TBPq": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_i85vT7CR": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_zAOFJZJA": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_grm0QDgY": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_i7RddwUd": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_TJjnkfgV": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_igus5Jpj": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_WHwAD15e": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_DLjrHtHj": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_VM0x7YXh": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_qxxhBmNI": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_yFBdFhC6": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_m71LTZmJ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_isD761Mp": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_vmSRfV6s": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_xP45cGTv": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_cnKb2uq5": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_VigCFTKe": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_RqKtuHKl": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_FPyi6OoZ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_DA0u0chX": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_cZSmbxiV": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_fstmUYmb": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_4Mfd3FqU": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_pjTyli3B": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_UMxgNOUT": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_4OtGl2Kj": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_qt7BL3E0": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_W21eDz61": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_oMs5cw3k": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Gv2quXHf": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_JcLkNAB1": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_3VHyzfZG": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_YnDhNjic": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_EE434p29": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_dmY2WzW7": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Zdt64uUj": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_wO4dauIB": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_s5iaNLtO": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ZsPgRr4R": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_aapNixgl": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_IP1NA9Al": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ssGJnlZ9": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_JxXSpbzB": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_TPmvY86d": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_HpxFOpCe": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ZLwgKLgE": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Allocation.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_AbXmBtCC": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Reporting-Analytics.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_yLhSmvJf": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Forecasting.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_zMIi43wP": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Workload-Optimization-2.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_mM1V75ah": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Architecting-for-Cloud.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_1ddV808l": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Onboarding-Workloads.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_DpsfAIJe": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Anomaly-Management.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_FDHhJOn6": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Rate-Optimization.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_n2oL2Jl8": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Planning-Estimating.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_wvFOTzkn": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Planning-Estimating.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_0gSKhD69": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Planning-Estimating.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_7jATEsaB": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Planning-Estimating.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_iKjO3f8g": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Planning-Estimating.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_rNlTSdXk": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Capabilities/Planning-Estimating.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_NZQ6jxZB": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_hcyvznvL": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_87okIiMV": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_jl0Tcg0I": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ssrSGOCy": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_hBb3Tcdy": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_JZh1Bj6L": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_5XPBLYT1": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_PjD1TF4p": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_dbVHniVY": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_8XYh7T8Y": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Q911hniZ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_HuCuPJJH": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_LffjOwbe": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ak02yEzW": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_qGivd2b8": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_qTwI3jBe": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_dw1cxqB3": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_lB54DA2S": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_q57Cig3J": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_2y5fc18B": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_8UvoMC0v": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_C5OpyCmG": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Zz0gK8Ft": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_a49P5Y3J": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_6IHzTRXa": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_zvsmHXjs": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_5QU3zAau": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_hNE8CCq3": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_EjoHn5C9": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_xy7dwpPM": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_e0QvVNtA": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_3gitv0dT": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_apPQGlXz": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ecY1DU8z": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_plP2ZfBT": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_oVRrw5WF": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_YD7URxLK": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_ZzXLmt8C": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_1MIkRdp8": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_bpGm36rO": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Cbk9Rvxr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_9DDGRKp2": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Nnp6veIo": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_7BKkSvvs": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_SmfxhvbB": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_9Qir0vNQ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_nmZ7gkig": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Y0E3gans": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_41v6YAlt": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_q6lC0FNG": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_j377Z87j": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_2OFLH0Y7": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_rLrxXbT0": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_o2Vgeovr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_3i38oGkZ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_q2HHueHN": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_1qXVRiwr": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_Bh6ALvHH": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_VZ4fgEM8": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_v3wgbARO": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_zxuZZ67c": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_og2ZMTtz": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_roq5R13x": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_FEfDJHIA": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_atIKoYHZ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Engineering.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_pQczfhPU": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/FinOps-Practitioner.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_6v26bwCJ": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Procurement.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_gCSkJLKg": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Finance.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_6dT1IZmb": {
+			"options": {
+				"preserveAspectRatio": true,
+				"src": "/static/app/vhc_TA_focus/Personas/Product.svg"
+			},
+			"type": "splunk.image"
+		},
+		"viz_YwWScDNJ": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "### Missing Columns\nCapacityReservationId,  CapacityReservationStatus"
+			}
+		},
+		"viz_oqJn4KFN": {
+			"type": "splunk.markdown",
+			"options": {
+				"markdown": "### No \"Correction\" in Charge Category And No \"Charge Class\" Column"
+			}
+		}
+	},
+	"dataSources": {
+		"ds_3rdJTQvt": {
+			"name": "Donut - Report spending across billing periods for a provider by service category 2",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = $ProviderName$\n| stats sum(sumBilledCost) AS TotalBilledCost BY ServiceCategory\n| sort -TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_50JCI5Ie": {
+			"name": "Table - Report refunds in a billing period",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\" ChargeCategory = \"Correction\" \n| stats sum(sumBilledCost) AS TotalBilledCost BY ProviderName, BillingAccountId, ChargeCategory, ServiceCategory, ServiceName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_8RbrxgxJ": {
+			"name": "Table - Analyze costs by service name",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| stats sum(sumBilledCost) AS TotalBilledCost,\n    sum(sumEffectiveCost) AS TotalEffectiveCost \n    BY BillingPeriodStart, ProviderName, SubAccountId, SubAccountName, ServiceName \n| sort -TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_AO0CCqsg": {
+			"name": "Table - Report commitment discount purchases",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\" ChargeCategory = \"Purchase\" CommitmentDiscountId = * \n| eval ChargePeriodStart = strptime(ChargePeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval ChargePeriodEnd = strptime(ChargePeriodEnd, \"%Y-%m-%d %H:%M:%S\") \n| stats min(ChargePeriodStart) AS ChargePeriodStart,\n    max(ChargePeriodEnd) AS ChargePeriodEnd,\n    sum(BilledCost) AS TotalBilledCost BY ProviderName, BillingAccountId, CommitmentDiscountId, CommitmentDiscountType, ChargeFrequency \n| eval ChargePeriodStart = strftime(ChargePeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval ChargePeriodEnd = strftime(ChargePeriodEnd, \"%Y-%m-%d %H:%M:%S\")"
+			},
+			"type": "ds.chain"
+		},
+		"ds_AOIyDGLX": {
+			"name": "Table - Analyze service costs month over month",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\" \n| stats sum(sumEffectiveCost) AS TotalEffectiveCost BY ProviderName, ServiceName \n| sort -TotalEffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_HOisVZBX": {
+			"name": "Table - Report refunds by subaccount within a billing period",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName=$ProviderName$ \n| stats sum(sumBilledCost) AS TotalBilledCost \n    BY ProviderName, BillingAccountId, SubAccountId, SubAccountName, ServiceCategory, ChargeCategory\n| sort -TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_J4evhrdt": {
+			"name": "Provider Name",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| dedup ProviderName \n| table ProviderName"
+			},
+			"type": "ds.chain"
+		},
+		"ds_NolQgnb3": {
+			"name": "Column - Analyze service costs month over month",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName=\"$ProviderName$\"\n| timechart span=1mon eval(round(sum(sumEffectiveCost),2)) as TotalEffectiveCost by ServiceName\n| addtotals label=Total"
+			},
+			"type": "ds.chain"
+		},
+		"ds_QLm6ljl9": {
+			"name": "Donat - Report costs by service category",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\"\n| stats sum(sumBilledCost) AS TotalBilledCost \n    BY ServiceCategory \n| sort -TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_SOkCeoDE": {
+			"name": "Column - Report application cost month over month",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| rex field=Tags max_match=0 \"\\'application\\':\\s*\\'(?<Application>[^\\']+)\\'\"\n| search ProviderName=\"$ProviderName$\" EffectiveCost > 0 Application=*\n| timechart span=1mon eval(round(sum(sumEffectiveCost),2)) as TotalEffectiveCost by Application \n| sort -TotalEffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_UdK3QLrI": {
+			"name": "Table - Analyze service costs by region",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName=\"$ProviderName$\"\n| stats sum(sumEffectiveCost) AS TotalEffectiveCost BY ProviderName, RegionId, RegionName \n| sort -TotalEffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_VY2da9PN": {
+			"name": "Service Category",
+			"options": {
+				"extend": "ds_DoQHZaPT",
+				"query": "| search ProviderName=\"$ProviderName$\" \n| eval ServiceCategory = if(ServiceCategory==\"\", \"No ServiceCategory\", ServiceCategory) \n| dedup ServiceCategory \n| table ServiceCategory"
+			},
+			"type": "ds.chain"
+		},
+		"ds_VpkoAL1R": {
+			"name": "Table - Determine Effective Savings Rate by Service",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\" EffectiveCost > 0 \n| eval ESROverList = (ListCost - EffectiveCost) / ListCost,\n    ESROverContract = (ContractedUnitPrice - EffectiveCost) / ContractedUnitPrice \n| table ProviderName, ServiceCategory, ContractedUnitPrice, PricingQuantity, EffectiveCost, ESROverList, ESROverContract"
+			},
+			"type": "ds.chain"
+		},
+		"ds_Xp8oEsQD": {
+			"name": "Donut - Analyze service costs by region",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| stats sum(sumEffectiveCost) AS TotalEffectiveCost BY RegionId \n| sort ChargePeriodStart, -TotalEffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_YAvFnFcJ": {
+			"name": "Table - Analyze the different metered costs for a particular SKU",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName=$ProviderName$\n| stats sum(PricingQuantity) AS TotalPricingQuantity,\n    sum(ListCost) AS TotalListCost,\n    sum(sumEffectiveCost) AS TotalEffectiveCost \n    BY ProviderName, ChargePeriodStart, ChargePeriodEnd, SkuId, SkuPriceId, PricingUnit, ListUnitPrice \n| sort ChargePeriodStart \n| head 100"
+			},
+			"type": "ds.chain"
+		},
+		"ds_aUkjWsOF": {
+			"name": "SingleValue - Analyze tag coverage",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName=\"$ProviderName$\"\n`focus_tag`\n`focus_tag_timetable`\n| eval tag_perc = case(isnull(tag_perc), 0, 1=1, tag_perc)\n| stats latest(tag_perc) as tag_perc by _time\n| where tag_perc like(\"%\")"
+			},
+			"type": "ds.chain"
+		},
+		"ds_eE9nmwJi": {
+			"name": "Table - Analyze capacity reservations on compute costs",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ServiceCategory = \"Compute\"\n| eval Status = case(\n    isnotnull(CapacityReservationId) AND CapacityReservationStatus == \"Unused\", \"Unused Capacity Reservation\",\n    isnotnull(CapacityReservationId) AND CapacityReservationStatus == \"Used\", \"Compute using Capacity Reservation\",\n    true(), \"Compute without Capacity Reservation\"\n)\n| stats sum(sumBilledCost) AS TotalBilledCost,\n        sum(sumEffectiveCost) AS TotalEffectiveCost \n    BY Status, ProviderName, BillingAccountId"
+			},
+			"type": "ds.chain"
+		},
+		"ds_fnx58zkT": {
+			"name": "Table - Report costs by service category",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\" \n| stats sum(sumBilledCost) AS TotalBilledCost \n    BY ProviderName, BillingCurrency, BillingPeriodStart, ServiceCategory \n| sort -TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_hl67qYgO": {
+			"name": "Column - Analyze costs by service name",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| stats sum(sumBilledCost) AS TotalBilledCost,  sum(EffectiveCost) AS TotalEffectiveCost BY ServiceName \n| sort -TotalBilledCost\n| head 10"
+			},
+			"type": "ds.chain"
+		},
+		"ds_lS0IkD6t": {
+			"name": "SingleValue - Report refunds by subaccount within a billing period",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName=$ProviderName$\n| stats sum(sumBilledCost) AS BilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_n6LtddhB": {
+			"name": "Table - Report costs by service category and subcategory",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName=$ProviderName$\n| eval ServiceSubcategory = if(isnull(ServiceSubcategory), \"n/a\", ServiceSubcategory)\n| stats sum(sumBilledCost) AS TotalBilledCost \n    BY ProviderName, BillingCurrency, BillingPeriodStart, ServiceCategory, ServiceSubcategory \n| sort -TotalBilledCost\n"
+			},
+			"type": "ds.chain"
+		},
+		"ds_njkjlc6w": {
+			"name": "Column - Report spending across billing periods for a provider by service category 3",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = $ProviderName$\n| stats sum(sumBilledCost) AS TotalBilledCost BY ServiceCategory\n| sort -TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_qLyntruR": {
+			"name": "Table - Report spending across billing periods for a provider by service category",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = $ProviderName$ \n| stats sum(sumBilledCost) AS TotalBilledCost \n    BY ProviderName, BillingAccountName, BillingAccountId, BillingCurrency, BillingPeriodStart, ServiceCategory, ServiceName \n| sort -TotalBilledCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_wdFdquhF": {
+			"name": "Table - Analyze costs of components of a resource",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\" ResourceId = * \n| stats sum(sumEffectiveCost) AS TotalEffectiveCost BY ResourceId, ResourceName, ResourceType, ChargeDescription, SkuId \n| sort -TotalEffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_wz8w0q4N": {
+			"name": "Table - Report effective cost of compute",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\" ServiceCategory = \"Compute\" \n| stats sum(sumEffectiveCost) AS TotalEffectiveCost \n    BY  CommitmentDiscountType, ServiceName, ProviderName, SubAccountId, SubAccountName, BillingPeriodStart\n| sort -TotalEffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_yT4i6GXs": {
+			"name": "Table - Report recurring charges for commitment-based discounts over a period",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ChargeFrequency = \"Recurring\" CommitmentDiscountId=\"*\" \n| stats sum(BilledCost) AS TotalBilledCost BY BillingPeriodStart, CommitmentDiscountId, CommitmentDiscountCategory, CommitmentDiscountType, ChargeFrequency"
+			},
+			"type": "ds.chain"
+		},
+		"ds_yrY5Lx8F": {
+			"name": "Table - Identify which provider versions your datasets have been generated with",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| dedup ProviderName \n| fields ProviderName, ProviderVersion \n| search ProviderName=$ProviderName$ \n| table ProviderName, ProviderVersion"
+			},
+			"type": "ds.chain"
+		},
+		"ds_yzDHojCx": {
+			"name": "Table - Identify unused capacity reservations",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search CapacityReservationStatus = \"Unused\"\n| stats sum(BilledCost) AS TotalBilledCost,\n        sum(EffectiveCost) AS TotalEffectiveCost \n    BY ProviderName, BillingAccountId, CapacityReservationId, CapacityReservationStatus"
+			},
+			"type": "ds.chain"
+		},
+		"ds_zdp9lgRW": {
+			"name": "Table - Report service costs by providers subaccount",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName = \"$ProviderName$\" SubAccountId = *\n| stats sum(sumEffectiveCost) AS TotalEffectiveCost \n    BY ProviderName, ServiceName, SubAccountId, SubAccountName\n| sort -TotalEffectiveCost"
+			},
+			"type": "ds.chain"
+		},
+		"ds_5GCpDkN0": {
+			"type": "ds.chain",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| search ProviderName=\"$ProviderName$\" \n`focus_tag` \n| stats max(with_tag) as with_tag min(no_tag) as no_tag dc(ResourceId) as total by ResourceId ServiceCategory \n| stats sum(with_tag) as with_tag sum(no_tag) as no_tag sum(total) as total by ServiceCategory \n| eval with_perc = if(isnull(round(100*with_tag/total,2)), 0, round(100*with_tag/total,2)) \n| fields ServiceCategory with_perc"
+			},
+			"name": "Column - Analyze tag coverage"
+		},
+		"ds_8mFavfsn": {
+			"type": "ds.chain",
+			"options": {
+				"extend": "ds_iBQpByei",
+				"query": "| rex field=Tags max_match=0 \"\\'application\\':\\s*\\'(?<Application>[^\\']+)\\'\" \n| search ProviderName=\"*\" EffectiveCost > 0 Application=*\n| eval BillingPeriodStart = strptime(BillingPeriodStart, \"%Y-%m-%d %H:%M:%S\") \n| eval Month = strftime(BillingPeriodStart, \"%Y-%m\") \n| stats sum(EffectiveCost) AS TotalEffectiveCost BY Month Application \n| eval TotalEffectiveCost = round(TotalEffectiveCost,2) \n| sort -TotalEffectiveCost"
+			},
+			"name": "Table - Report application cost month over month"
+		},
+		"ds_iBQpByei": {
+			"type": "ds.search",
+			"options": {
+				"query": "| `focus_base_search`"
+			},
+			"name": "Base Search"
+		}
+	},
+	"layout": {
+		"globalInputs": [
+			"input_global_trp",
+			"input_u6FJXHuo"
+		],
+		"layoutDefinitions": {
+			"layout_1ZDjhVN0": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_KzyyOUSj",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_ixIPHK0r",
+						"position": {
+							"h": 270,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_I1xDbEBl",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_v3eh8nBx",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_9YlMrQgN",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_hvTLCN2E",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_IbuJRRJr",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_WWcKMmjm",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_PHJ7B8wL",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_fTCJiQbz",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_FKLvYKTZ",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_bU91dUNF",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_6IHzTRXa",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_zvsmHXjs",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_5QU3zAau",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_hNE8CCq3",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_EjoHn5C9",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_4KgIC2zQ": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_9lFBuian",
+						"position": {
+							"h": 590,
+							"w": 920,
+							"x": 910,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_ZEWOoaJ0",
+						"position": {
+							"h": 270,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_f8omzPjM",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_J2QbCfmK",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_tv064Byu",
+						"position": {
+							"h": 300,
+							"w": 570,
+							"x": 320,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_pisawx9F",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_RCg9FHkc",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_at4w5ACz",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_nxoba3Vr",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_zIYU4kN0",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_rTFK6dqs",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_fefjX0UM",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_PbY573Al",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_2y5fc18B",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_8UvoMC0v",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_C5OpyCmG",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_Zz0gK8Ft",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_a49P5Y3J",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_7ECiEDjz": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_4OBTRO9Z",
+						"position": {
+							"h": 590,
+							"w": 1230,
+							"x": 600,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_wpPyZZhp",
+						"position": {
+							"h": 300,
+							"w": 260,
+							"x": 320,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_VN0xT05p",
+						"position": {
+							"h": 300,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_OZgEI5bs",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_cDVaF0Fw",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_rfUFSedC",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_2VmNIjcT",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_PTkrd48R",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_XPSv6SMx",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_ZnnSY2f7",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 220
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_VFlbUWSH",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 260
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_mQ6b6uKu",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 300
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_SL1kzcF5",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_NZQ6jxZB",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_hcyvznvL",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_87okIiMV",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_jl0Tcg0I",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ssrSGOCy",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_8qlEqulj": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_xv0Mg31r",
+						"position": {
+							"h": 590,
+							"w": 920,
+							"x": 910,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_xk2c2axf",
+						"position": {
+							"h": 590,
+							"w": 570,
+							"x": 320,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_zzhkKOk3",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_El0IWW68",
+						"position": {
+							"h": 270,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_h8SCGsmz",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_1tkmvTlX",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_fCUDhi7Y",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_uc5fDskg",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_YeyXNHEr",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_qeuGZB4F",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_PuoazQId",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_46PTpvFJ",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_EJZmGUfd",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_xy7dwpPM",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_e0QvVNtA",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_3gitv0dT",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_apPQGlXz",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ecY1DU8z",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_BBRIadHI": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_YJYII3TO",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_H5Ss5rLd",
+						"position": {
+							"h": 270,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_vmLHdqRw",
+						"position": {
+							"h": 400,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_A2MuFNtT",
+						"position": {
+							"h": 590,
+							"w": 920,
+							"x": 910,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_6uYu5wmf",
+						"position": {
+							"h": 300,
+							"w": 572,
+							"x": 320,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_vmSRfV6s",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_xP45cGTv",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_cnKb2uq5",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_VigCFTKe",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_RqKtuHKl",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_FPyi6OoZ",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_DA0u0chX",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_cZSmbxiV",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_iKjO3f8g",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 380,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_SmfxhvbB",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_9Qir0vNQ",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_nmZ7gkig",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_Y0E3gans",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_41v6YAlt",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_G9DN1k4f": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_4X6ZaAO9",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Q986T0Kl",
+						"position": {
+							"h": 260,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_8eaUFNFg",
+						"position": {
+							"h": 300,
+							"w": 280,
+							"x": 320,
+							"y": 300
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_gyAQ9SkW",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_IrUXxHkr",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_4qOshsCL",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_cRJBpf0M",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_8X6V3jmT",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_695s91cK",
+						"type": "block",
+						"position": {
+							"x": 620,
+							"y": 300,
+							"w": 1210,
+							"h": 590
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_RtPMEljU": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_84qNBYRB",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 360
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_KvtLp7SE",
+						"position": {
+							"h": 320,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_cofKRuPC",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_hfWoLP4Y",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_wJGasQjA",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_56aRNPpE",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_wY3drxNb",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_VGbtCnva",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_EDI94SWr",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 220
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_tv2ElmGu",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 260
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_J8G3c2uv",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 300
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_E1o2w3YL",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_FLBy5Ttw",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_xQyRrID8",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_c6YxyyHT",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_h8jE6XIG",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_znDowidr",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 220
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_YwWScDNJ",
+						"type": "block",
+						"position": {
+							"x": 40,
+							"y": 420,
+							"w": 230,
+							"h": 60
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_Tz2yk8wg": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_ObGxAkH6",
+						"position": {
+							"h": 590,
+							"w": 920,
+							"x": 910,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_fUtTA06d",
+						"position": {
+							"h": 300,
+							"w": 570,
+							"x": 320,
+							"y": 310
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_nA3mfwMQ",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_qu32nurV",
+						"position": {
+							"h": 270,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_fimE84cz",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_UcuuEiGk",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_mGs3wowa",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_8gM8TBPq",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_i85vT7CR",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_zAOFJZJA",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_grm0QDgY",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_i7RddwUd",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_TJjnkfgV",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_plP2ZfBT",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_oVRrw5WF",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_YD7URxLK",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ZzXLmt8C",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_1MIkRdp8",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_Vh296vFa": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_SLWGgBxQ",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_59meor9j",
+						"position": {
+							"h": 340,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_qaRl2NF3",
+						"position": {
+							"h": 410,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_JgClLUUZ",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 380
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_s5iaNLtO",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ZsPgRr4R",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_aapNixgl",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_IP1NA9Al",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ssGJnlZ9",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_JxXSpbzB",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_TPmvY86d",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_HpxFOpCe",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_wvFOTzkn",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 380,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_v3wgbARO",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_zxuZZ67c",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_og2ZMTtz",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_roq5R13x",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_FEfDJHIA",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_ZsKmmM3P": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_9gdVPJ2r",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_B5ILidJx",
+						"position": {
+							"h": 300,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_OOOwiySk",
+						"position": {
+							"h": 400,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_PWIy5E1G",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_ZLwgKLgE",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_AbXmBtCC",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_yLhSmvJf",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_zMIi43wP",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_mM1V75ah",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_1ddV808l",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_DpsfAIJe",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_FDHhJOn6",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_n2oL2Jl8",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 380,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_atIKoYHZ",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_pQczfhPU",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_6v26bwCJ",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_gCSkJLKg",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_6dT1IZmb",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_aCJoQhj2": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_0GudEw8Q",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 300
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_6Kyharh8",
+						"position": {
+							"h": 260,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_sJUDAPzU",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_SCY3PNvL",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_9mNJqSq0",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_edD1S8oV",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_AxvHvxKm",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_YXWUWwrU",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_B9lnSQX8",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 220
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Kwmf22tA",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 260
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_kyusGzDY",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 300
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_B7n7zfQR",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_hBb3Tcdy",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_JZh1Bj6L",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_5XPBLYT1",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_PjD1TF4p",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_dbVHniVY",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_ab68vcYr": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_hlqLE2Vv",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_ws2WVaLZ",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_IgqUX4Go",
+						"position": {
+							"h": 260,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_NlrerBmb",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_kHcnE9VW",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_4rRSgwWH",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_OtLNoOTY",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_ICejFjqd",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 300
+						},
+						"type": "block"
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_bYgiFJkw": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_PlpoAMHR",
+						"position": {
+							"h": 340,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Ks3HD2Ff",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 380
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_iAH2qtdO",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lKvTcO3B",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_seTsoriv",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_CmL8kJND",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_DMbqbryM",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_i0B2QGYD",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_k4Yj6sCL",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_80uK34s1",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_imxnLx8c",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_31otYePr",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_JQsKqm6c",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 220
+						},
+						"type": "block"
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_dCWRth90": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_AawKvOf4",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_NDx0H1lW",
+						"position": {
+							"h": 310,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_h9sq2dnX",
+						"position": {
+							"h": 400,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_bx3r5ckl",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 350
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_fstmUYmb",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_4Mfd3FqU",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_pjTyli3B",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_UMxgNOUT",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_4OtGl2Kj",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_qt7BL3E0",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_W21eDz61",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_oMs5cw3k",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_7jATEsaB",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 380,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_q6lC0FNG",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_j377Z87j",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_2OFLH0Y7",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_rLrxXbT0",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_o2Vgeovr",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_oqJn4KFN",
+						"type": "block",
+						"position": {
+							"x": 40,
+							"y": 440,
+							"w": 260,
+							"h": 70
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_f6qVyQVD": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_jeISZ2mR",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 360
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_8GXsmgjV",
+						"position": {
+							"h": 320,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_eD99ax44",
+						"position": {
+							"h": 280,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_bD9c8kLX",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_WukMx81P",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_b15MXa9d",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_VQlowZ5v",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_dkQUGhou",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_PQDvDsKq",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 220
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_8QaJCJxt",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_br1jy1v0",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_JfhwOChm",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_4FfAzTPt",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_01SUTREb",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 220
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_e9vnwnKy",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 260
+						},
+						"type": "block"
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_icT8xOV0": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_dSxn65Jw",
+						"position": {
+							"h": 300,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_9lGirQVR",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_KG9n9XMu",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Or1bi3lM",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_hWJQbRMe",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lmoZe40k",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_0hhk3sJr",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 240,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_UaTrPmQE",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 100
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_BjpzvGEN",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 60
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_TnTftrdM",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 180
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_7G7DSqDo",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 140
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_HkapSRAL",
+						"position": {
+							"h": 30,
+							"w": 30,
+							"x": 2050,
+							"y": 220
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_kz2Dmc2q",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 340
+						},
+						"type": "block"
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_lJjZBi50": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_jkYOz2Vi",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_9KvrYjCu",
+						"position": {
+							"h": 320,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_qDPfw3ON",
+						"position": {
+							"h": 400,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_O1a8YNTV",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 360
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_Gv2quXHf",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_JcLkNAB1",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_3VHyzfZG",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_YnDhNjic",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_EE434p29",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_dmY2WzW7",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_Zdt64uUj",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_wO4dauIB",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_0gSKhD69",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 380,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_3i38oGkZ",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_q2HHueHN",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_1qXVRiwr",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_Bh6ALvHH",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_VZ4fgEM8",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_nKrSe804": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_1XpiMv2U",
+						"position": {
+							"h": 300,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_RANyjoiL",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_EL66FCIM",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_TmjFXJMf",
+						"position": {
+							"h": 590,
+							"w": 920,
+							"x": 910,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_lDTH5zpX",
+						"position": {
+							"h": 300,
+							"w": 570,
+							"x": 320,
+							"y": 340
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_4ujhxIq7",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_hWguFbFr",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_WbFgHsk0",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ZGtdE0Xr",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_3J0WoI4P",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_7LV67fyO",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_2IhfR3QP",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_8PNIeMMF",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_8XYh7T8Y",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_Q911hniZ",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_HuCuPJJH",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_LffjOwbe",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ak02yEzW",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_pqsPpJY1": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_LQ2JUKcW",
+						"position": {
+							"h": 310,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_GlVXsYfe",
+						"position": {
+							"h": 360,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_uOhKuK3y",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_SU6opRpY",
+						"position": {
+							"h": 590,
+							"w": 920,
+							"x": 910,
+							"y": 350
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_EiLaC83G",
+						"position": {
+							"h": 300,
+							"w": 570,
+							"x": 320,
+							"y": 350
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_HkJzyG8f",
+						"position": {
+							"h": 270,
+							"w": 570,
+							"x": 320,
+							"y": 670
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_KqL8zAnZ",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_unNEC3NZ",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_9kOVWLm2",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_S4MZ8fNS",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_ahASQ5xo",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_fEwtxaOz",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_XejdOMsM",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_V2lQZ1Ko",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_qGivd2b8",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_qTwI3jBe",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_dw1cxqB3",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_lB54DA2S",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_q57Cig3J",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			},
+			"layout_tzewbZfg": {
+				"options": {
+					"display": "fit-to-width",
+					"width": 2150,
+					"height": 1000
+				},
+				"structure": [
+					{
+						"item": "viz_93l0X9sj",
+						"position": {
+							"h": 260,
+							"w": 260,
+							"x": 1850,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_YxkUKRNw",
+						"position": {
+							"h": 280,
+							"w": 1510,
+							"x": 320,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_oYgmhf36",
+						"position": {
+							"h": 400,
+							"w": 260,
+							"x": 40,
+							"y": 20
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_4UBUKR4G",
+						"position": {
+							"h": 590,
+							"w": 1510,
+							"x": 320,
+							"y": 320
+						},
+						"type": "block"
+					},
+					{
+						"item": "viz_igus5Jpj",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_WHwAD15e",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_DLjrHtHj",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_VM0x7YXh",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_qxxhBmNI",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_yFBdFhC6",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 260,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_m71LTZmJ",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 300,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_isD761Mp",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 340,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_rNlTSdXk",
+						"type": "block",
+						"position": {
+							"x": 240,
+							"y": 380,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_bpGm36rO",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 100,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_Cbk9Rvxr",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 60,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_9DDGRKp2",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 180,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_Nnp6veIo",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 140,
+							"w": 30,
+							"h": 30
+						}
+					},
+					{
+						"item": "viz_7BKkSvvs",
+						"type": "block",
+						"position": {
+							"x": 2050,
+							"y": 220,
+							"w": 30,
+							"h": 30
+						}
+					}
+				],
+				"type": "absolute"
+			}
+		},
+		"options": {},
+		"tabs": {
+			"items": [
+				{
+					"label": "A",
+					"layoutId": "layout_G9DN1k4f"
+				},
+				{
+					"label": "I",
+					"layoutId": "layout_ab68vcYr"
+				},
+				{
+					"label": "A",
+					"layoutId": "layout_bYgiFJkw"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_icT8xOV0"
+				},
+				{
+					"label": "A",
+					"layoutId": "layout_f6qVyQVD"
+				},
+				{
+					"label": "I",
+					"layoutId": "layout_RtPMEljU"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_7ECiEDjz"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_aCJoQhj2"
+				},
+				{
+					"label": "A",
+					"layoutId": "layout_nKrSe804"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_pqsPpJY1"
+				},
+				{
+					"label": "A",
+					"layoutId": "layout_4KgIC2zQ"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_1ZDjhVN0"
+				},
+				{
+					"label": "A",
+					"layoutId": "layout_8qlEqulj"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_Tz2yk8wg"
+				},
+				{
+					"label": "A",
+					"layoutId": "layout_tzewbZfg"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_BBRIadHI"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_dCWRth90"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_lJjZBi50"
+				},
+				{
+					"label": "R",
+					"layoutId": "layout_Vh296vFa"
+				},
+				{
+					"label": "ESR",
+					"layoutId": "layout_ZsKmmM3P"
+				}
+			]
+		}
+	},
+	"applicationProperties": {
+		"collapseNavigation": false,
+		"hideEdit": false,
+		"hideExport": false,
+		"hideOpenInSearch": false
+	}
+}
+    ]]></definition>
+</dashboard>

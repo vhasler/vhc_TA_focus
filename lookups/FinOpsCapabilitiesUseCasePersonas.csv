@@ -1,0 +1,239 @@
+Personas,Capabilities
+FinOps Practitioner,Analyze tag coverage
+Engineering,Analyze tag coverage
+Analyze tag coverage,Allocation
+Analyze tag coverage,Reporting & Analytics
+FinOps Practitioner,Identify which provider versions your datasets have been generated with
+Engineering,Identify which provider versions your datasets have been generated with
+Identify which provider versions your datasets have been generated with,Allocation
+Identify which provider versions your datasets have been generated with,Reporting & Analytics
+FinOps Practitioner,Analyze the different metered costs for a particular SKU
+Engineering,Analyze the different metered costs for a particular SKU
+Finance,Analyze the different metered costs for a particular SKU
+Procurement,Analyze the different metered costs for a particular SKU
+Product,Analyze the different metered costs for a particular SKU
+Analyze the different metered costs for a particular SKU,Allocation
+Analyze the different metered costs for a particular SKU,Reporting & Analytics
+Analyze the different metered costs for a particular SKU,Forecasting
+Analyze the different metered costs for a particular SKU,Workload Optimization
+FinOps Practitioner,Report costs by service category and subcategory
+Engineering,Report costs by service category and subcategory
+Finance,Report costs by service category and subcategory
+Procurement,Report costs by service category and subcategory
+Product,Report costs by service category and subcategory
+Report costs by service category and subcategory,Allocation
+Report costs by service category and subcategory,Reporting & Analytics
+Report costs by service category and subcategory,Forecasting
+Report costs by service category and subcategory,Workload Optimization
+FinOps Practitioner,Analyze capacity reservations on compute costs
+Engineering,Analyze capacity reservations on compute costs
+Finance,Analyze capacity reservations on compute costs
+Procurement,Analyze capacity reservations on compute costs
+Product,Analyze capacity reservations on compute costs
+Analyze capacity reservations on compute costs,Allocation
+Analyze capacity reservations on compute costs,Reporting & Analytics
+Analyze capacity reservations on compute costs,Forecasting
+Analyze capacity reservations on compute costs,Workload Optimization
+Analyze capacity reservations on compute costs,Architecting for Cloud
+Analyze capacity reservations on compute costs,Onboarding Workloads
+FinOps Practitioner,Identify unused capacity reservations
+Engineering,Identify unused capacity reservations
+Finance,Identify unused capacity reservations
+Procurement,Identify unused capacity reservations
+Product,Identify unused capacity reservations
+Identify unused capacity reservations,Allocation
+Identify unused capacity reservations,Reporting & Analytics
+Identify unused capacity reservations,Forecasting
+Identify unused capacity reservations,Workload Optimization
+Identify unused capacity reservations,Architecting for Cloud
+Identify unused capacity reservations,Onboarding Workloads
+Identify unused capacity reservations,Anomaly Management
+Identify unused capacity reservations,Rate Optimization
+FinOps Practitioner,Report refunds by subaccount within a billing period
+Engineering,Report refunds by subaccount within a billing period
+Finance,Report refunds by subaccount within a billing period
+Procurement,Report refunds by subaccount within a billing period
+Product,Report refunds by subaccount within a billing period
+Report refunds by subaccount within a billing period,Allocation
+Report refunds by subaccount within a billing period,Reporting & Analytics
+Report refunds by subaccount within a billing period,Forecasting
+Report refunds by subaccount within a billing period,Workload Optimization
+Report refunds by subaccount within a billing period,Architecting for Cloud
+Report refunds by subaccount within a billing period,Onboarding Workloads
+Report refunds by subaccount within a billing period,Anomaly Management
+Report refunds by subaccount within a billing period,Rate Optimization
+FinOps Practitioner,Report recurring charges for commitment-based discounts over a period
+Engineering,Report recurring charges for commitment-based discounts over a period
+Finance,Report recurring charges for commitment-based discounts over a period
+Procurement,Report recurring charges for commitment-based discounts over a period
+Product,Report recurring charges for commitment-based discounts over a period
+Report recurring charges for commitment-based discounts over a period,Allocation
+Report recurring charges for commitment-based discounts over a period,Reporting & Analytics
+Report recurring charges for commitment-based discounts over a period,Forecasting
+Report recurring charges for commitment-based discounts over a period,Workload Optimization
+Report recurring charges for commitment-based discounts over a period,Architecting for Cloud
+Report recurring charges for commitment-based discounts over a period,Onboarding Workloads
+Report recurring charges for commitment-based discounts over a period,Anomaly Management
+Report recurring charges for commitment-based discounts over a period,Rate Optimization
+FinOps Practitioner,Analyze costs by service name
+Engineering,Analyze costs by service name
+Finance,Analyze costs by service name
+Procurement,Analyze costs by service name
+Product,Analyze costs by service name
+Analyze costs by service name,Allocation
+Analyze costs by service name,Reporting & Analytics
+Analyze costs by service name,Forecasting
+Analyze costs by service name,Workload Optimization
+Analyze costs by service name,Architecting for Cloud
+Analyze costs by service name,Onboarding Workloads
+Analyze costs by service name,Anomaly Management
+Analyze costs by service name,Rate Optimization
+FinOps Practitioner,Report spending across billing periods for a provider by service category
+Engineering,Report spending across billing periods for a provider by service category
+Finance,Report spending across billing periods for a provider by service category
+Procurement,Report spending across billing periods for a provider by service category
+Product,Report spending across billing periods for a provider by service category
+Report spending across billing periods for a provider by service category,Allocation
+Report spending across billing periods for a provider by service category,Reporting & Analytics
+Report spending across billing periods for a provider by service category,Forecasting
+Report spending across billing periods for a provider by service category,Workload Optimization
+Report spending across billing periods for a provider by service category,Architecting for Cloud
+Report spending across billing periods for a provider by service category,Onboarding Workloads
+Report spending across billing periods for a provider by service category,Anomaly Management
+Report spending across billing periods for a provider by service category,Rate Optimization
+FinOps Practitioner,Analyze service costs by region
+Engineering,Analyze service costs by region
+Finance,Analyze service costs by region
+Procurement,Analyze service costs by region
+Product,Analyze service costs by region
+Analyze service costs by region,Allocation
+Analyze service costs by region,Reporting & Analytics
+Analyze service costs by region,Forecasting
+Analyze service costs by region,Workload Optimization
+Analyze service costs by region,Architecting for Cloud
+Analyze service costs by region,Onboarding Workloads
+Analyze service costs by region,Anomaly Management
+Analyze service costs by region,Rate Optimization
+FinOps Practitioner,Report service costs by providers subaccount
+Engineering,Report service costs by providers subaccount
+Finance,Report service costs by providers subaccount
+Procurement,Report service costs by providers subaccount
+Product,Report service costs by providers subaccount
+Report service costs by providers subaccount,Allocation
+Report service costs by providers subaccount,Reporting & Analytics
+Report service costs by providers subaccount,Forecasting
+Report service costs by providers subaccount,Workload Optimization
+Report service costs by providers subaccount,Architecting for Cloud
+Report service costs by providers subaccount,Onboarding Workloads
+Report service costs by providers subaccount,Anomaly Management
+Report service costs by providers subaccount,Rate Optimization
+FinOps Practitioner,Analyze service costs month over month
+Engineering,Analyze service costs month over month
+Finance,Analyze service costs month over month
+Procurement,Analyze service costs month over month
+Product,Analyze service costs month over month
+Analyze service costs month over month,Allocation
+Analyze service costs month over month,Reporting & Analytics
+Analyze service costs month over month,Forecasting
+Analyze service costs month over month,Workload Optimization
+Analyze service costs month over month,Architecting for Cloud
+Analyze service costs month over month,Onboarding Workloads
+Analyze service costs month over month,Anomaly Management
+Analyze service costs month over month,Rate Optimization
+FinOps Practitioner,Report application cost month over month
+Engineering,Report application cost month over month
+Finance,Report application cost month over month
+Procurement,Report application cost month over month
+Product,Report application cost month over month
+Report application cost month over month,Allocation
+Report application cost month over month,Reporting & Analytics
+Report application cost month over month,Forecasting
+Report application cost month over month,Workload Optimization
+Report application cost month over month,Architecting for Cloud
+Report application cost month over month,Onboarding Workloads
+Report application cost month over month,Anomaly Management
+Report application cost month over month,Rate Optimization
+FinOps Practitioner,Analyze costs of components of a resource
+Engineering,Analyze costs of components of a resource
+Finance,Analyze costs of components of a resource
+Procurement,Analyze costs of components of a resource
+Product,Analyze costs of components of a resource
+Analyze costs of components of a resource,Allocation
+Analyze costs of components of a resource,Reporting & Analytics
+Analyze costs of components of a resource,Forecasting
+Analyze costs of components of a resource,Workload Optimization
+Analyze costs of components of a resource,Architecting for Cloud
+Analyze costs of components of a resource,Onboarding Workloads
+Analyze costs of components of a resource,Anomaly Management
+Analyze costs of components of a resource,Rate Optimization
+Analyze costs of components of a resource,Planning & Estimating
+FinOps Practitioner,Report costs by service category
+Engineering,Report costs by service category
+Finance,Report costs by service category
+Procurement,Report costs by service category
+Product,Report costs by service category
+Report costs by service category,Allocation
+Report costs by service category,Reporting & Analytics
+Report costs by service category,Forecasting
+Report costs by service category,Workload Optimization
+Report costs by service category,Architecting for Cloud
+Report costs by service category,Onboarding Workloads
+Report costs by service category,Anomaly Management
+Report costs by service category,Rate Optimization
+Report costs by service category,Planning & Estimating
+FinOps Practitioner,Report refunds in a billing period
+Engineering,Report refunds in a billing period
+Finance,Report refunds in a billing period
+Procurement,Report refunds in a billing period
+Product,Report refunds in a billing period
+Report refunds in a billing period,Allocation
+Report refunds in a billing period,Reporting & Analytics
+Report refunds in a billing period,Forecasting
+Report refunds in a billing period,Workload Optimization
+Report refunds in a billing period,Architecting for Cloud
+Report refunds in a billing period,Onboarding Workloads
+Report refunds in a billing period,Anomaly Management
+Report refunds in a billing period,Rate Optimization
+Report refunds in a billing period,Planning & Estimating
+FinOps Practitioner,Report effective cost of compute
+Engineering,Report effective cost of compute
+Finance,Report effective cost of compute
+Procurement,Report effective cost of compute
+Product,Report effective cost of compute
+Report effective cost of compute,Allocation
+Report effective cost of compute,Reporting & Analytics
+Report effective cost of compute,Forecasting
+Report effective cost of compute,Workload Optimization
+Report effective cost of compute,Architecting for Cloud
+Report effective cost of compute,Onboarding Workloads
+Report effective cost of compute,Anomaly Management
+Report effective cost of compute,Rate Optimization
+Report effective cost of compute,Planning & Estimating
+FinOps Practitioner,Report commitment discount purchases
+Engineering,Report commitment discount purchases
+Finance,Report commitment discount purchases
+Procurement,Report commitment discount purchases
+Product,Report commitment discount purchases
+Report commitment discount purchases,Allocation
+Report commitment discount purchases,Reporting & Analytics
+Report commitment discount purchases,Forecasting
+Report commitment discount purchases,Workload Optimization
+Report commitment discount purchases,Architecting for Cloud
+Report commitment discount purchases,Onboarding Workloads
+Report commitment discount purchases,Anomaly Management
+Report commitment discount purchases,Rate Optimization
+Report commitment discount purchases,Planning & Estimating
+FinOps Practitioner,Determine Effective Savings Rate by Service
+Engineering,Determine Effective Savings Rate by Service
+Finance,Determine Effective Savings Rate by Service
+Procurement,Determine Effective Savings Rate by Service
+Product,Determine Effective Savings Rate by Service
+Determine Effective Savings Rate by Service,Allocation
+Determine Effective Savings Rate by Service,Reporting & Analytics
+Determine Effective Savings Rate by Service,Forecasting
+Determine Effective Savings Rate by Service,Workload Optimization
+Determine Effective Savings Rate by Service,Architecting for Cloud
+Determine Effective Savings Rate by Service,Onboarding Workloads
+Determine Effective Savings Rate by Service,Anomaly Management
+Determine Effective Savings Rate by Service,Rate Optimization
+Determine Effective Savings Rate by Service,Planning & Estimating
