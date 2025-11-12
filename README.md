@@ -1,4 +1,4 @@
-# TA FOCUS™ (Cost and Usage)
+# VHC App for FOCUS™
 
 Cost and Usage by FOCUS™ Specification.  
 The unifying format for cloud billing data.
