@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0.0",
   "info": {
-    "title": "TA FOCUS\u2122",
+    "title": "APP for FOCUS\u2122",
     "id": {
       "group": null,
       "name": "vhc_TA_focus",
@@ -34,7 +34,7 @@
     },
     "releaseNotes": {
       "name": null,
-      "text": null,
+      "text": "./README.md",
       "uri": null
     }
   },
