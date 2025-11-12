@@ -1,7 +1,7 @@
 {
   "schemaVersion": "2.0.0",
   "info": {
-    "title": "APP for FOCUS\u2122",
+    "title": "FOCUS\u2122 TA for FinOps",
     "id": {
       "group": null,
       "name": "vhc_TA_focus",
